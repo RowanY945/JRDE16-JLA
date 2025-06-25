@@ -27,7 +27,7 @@ No spaces or special characters except hyphens
 
 ## 📝 Commit Guidelines
 **One Commit Per Pull Request**
-Important: Each pull request must contain exactly **ONE** commit. Use git rebase -i or git reset to squash multiple commits before creating the PR.\
+Important: Each pull request must contain exactly **ONE** commit. Use `git rebase -i` or `git reset` to squash multiple commits before creating the PR.\
 Commit Message Pattern\
 `[prefix]: [task name] [task description]`
 
