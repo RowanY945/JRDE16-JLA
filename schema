@@ -13,16 +13,6 @@ root
  |    |-- lastName: string (nullable = true)
 
 #get_job
-
-df1 = sc.parallelize([a,b]).map(lambda x: json.dumps(x))
-df1 = spark.read.json(df1)
-
-
-
-
-
-
-df1.printSchema()
 root
  |-- $recipeType: string (nullable = true)
  |-- allJobHiringTeamMembersInjectionResult: struct (nullable = true)
