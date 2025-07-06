@@ -67,3 +67,7 @@ post_date=job_info['listedAt']
 print(post_date)
 expire_date=job_info['expireAt']
 print(expire_date)
+apply_url=job_info['applyMethod']['com.linkedin.voyager.jobs.ComplexOnsiteApply']['companyApplyUrl']
+print(apply_url)
+company_url=job_info['companyDetails']['com.linkedin.voyager.deco.jobs.web.shared.WebJobPostingCompany']['companyResolutionResult']['url']
+print(company_url)
