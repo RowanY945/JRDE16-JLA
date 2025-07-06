@@ -37,10 +37,33 @@ def get_jobid(js):
 def get_jobdescription(js):
       return js['description']['text']
 #demo
+
 ak=lk.search_jobs(keywords="data engineer")
-jobid=get_jobid(ak[0])
+job_item=ak[0]
+jobid=get_jobid(job_item)
 print(jobid)
-jobfull=lk.get_job(job_id=jobid)
-print(jobfull)
-jd=get_jobdescription(jobfull)
-print(jd)
+job_info=lk.get_job(job_id=jobid)
+title=job_info['title']
+print(title)
+company=job_info['companyDetails']['com.linkedin.voyager.deco.jobs.web.shared.WebJobPostingCompany']['companyResolutionResult']['name']
+print(company)
+location=job_info['companyDetails']['com.linkedin.voyager.deco.jobs.web.shared.WebJobPostingCompany']['companyResolutionResult']['headquarter']['city']
+print(location)
+employment_type=job_info['formattedEmploymentStatus']
+print(employment_type)
+seniority_level=job_info['formattedExperienceLevel']
+print(seniority_level)
+industry=job_info['formattedIndustries']
+print(industry)
+work_place=job_info['workplaceTypes'][0].split(':')[-1]
+print(work_place)
+job_description=job_info['description']['text']
+print(job_description)
+job_url=job_info['jobPostingUrl']
+print(job_url)
+repost=job_item['repostedJob']
+print(repost)
+post_date=job_info['listedAt']
+print(post_date)
+expire_date=job_info['expireAt']
+print(expire_date)
