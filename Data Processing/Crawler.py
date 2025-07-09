@@ -38,7 +38,7 @@ def get_jobdescription(js):
       return js['description']['text']
 #demo
 
-ak=lk.search_jobs(keywords="data engineer")
+ak=lk.search_jobs(keywords="data engineer",offset=20)
 job_item=ak[0]
 jobid=get_jobid(job_item)
 print(jobid)
