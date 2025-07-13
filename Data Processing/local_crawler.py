@@ -1,7 +1,6 @@
 import json
 import random
-import os
-import boto3
+
 from datetime import datetime, timezone
 import logging
 import time
@@ -13,6 +12,10 @@ import pandas as pd
 import io
 from requests.cookies import RequestsCookieJar
 keyword="Data engineer"
+NUMBER_OF_PAGES=3
+LISTED_AT=259200
+SEARCH_LIMIT=10
+SEARCH_LOCATION="Australia"
 def get_j(self, job_id: str):
         """Fetch data about a given job.
         :param job_id: LinkedIn job ID
@@ -30,7 +33,7 @@ def get_j(self, job_id: str):
         data = res.json()
 
         if data and "status" in data and data["status"] != 200:
-            self.logger.info("request failed: {}".format(data["message"]))
+            print("request failed: {}".format(data["message"]))
             return {}
 
         return data 
@@ -51,19 +54,17 @@ https://github.com/tomquirk/linkedin-api
 
 
 # Initialize AWS clients
-s3 = boto3.client('s3')
 
 # Set up logging
-logger = logging.getLogger()
-logger.setLevel(logging.INFO)
+
 
 def search_jobs(api: Linkedin, keywords: str, offset: int) -> List[Dict]:
     """Search for jobs using LinkedIn API"""
     return api.search_jobs(
         keywords='Data Engineer',
-        location_name=os.environ['SEARCH_LOCATION'],
-        limit=int(os.environ['SEARCH_LIMIT']),
-        listed_at=int(os.environ['LISTED_AT']),
+        location_name=SEARCH_LOCATION,
+        limit=SEARCH_LIMIT,
+        listed_at=LISTED_AT,
         offset=offset 
     )
 
@@ -76,7 +77,7 @@ def process_job(job: Dict, api2: Linkedin) -> Dict:
     try:
         job_id = job.get('id') or job.get('entityUrn', '').split(':')[-1]
         if not job_id:
-            logger.error("Job ID not found")
+       
             return None
 
         # Get job details
@@ -130,14 +131,15 @@ def process_job(job: Dict, api2: Linkedin) -> Dict:
             "apply_url": apply_url
         }
 
-        logger.info(f"Processed job: {job_info['title']} at {job_info['company']}")
+       
         return job_info
 
     except Exception as e:
-        logger.error(f"Error processing job {job_id}: {str(e)}")
+        print(f"Error processing job {job_id}: {str(e)}")
         return None
 
-def lambda_handler(event, context):
+def local_handler():
+    all_jobid=set()
     """Synchronous Lambda function handler"""
     try:
         current_time = int(time.time())
@@ -168,58 +170,58 @@ def lambda_handler(event, context):
 # Make sure to pass an empty password when using cookies
         print("Account 2 authenticated")
 
-
         # Initialize LinkedIn clients
 
         # Main processing
         all_jobs = []
         seen_in_current_search = set()  # used for deduplication during pagination
         
-        logger.info("Starting job search...")
+        print("Starting job search...")
         
-        for page in range(int(os.environ['NUMBER_OF_PAGES'])):
-            offset = page * int(os.environ['SEARCH_LIMIT'])
-            logger.info(f"Searching page {page + 1} (offset {offset})...")
+        for page in range (NUMBER_OF_PAGES) :
+            offset = page * SEARCH_LIMIT
+            print(f"Searching page {page + 1} (offset {offset})...")
             
             ##jobs = search_jobs(api1, keyword, offset)
             try:
                 jobs = search_jobs(api1, keyword, offset)
-                logger.info(f"Found {len(jobs)} jobs on page {page + 1}")
+                print(f"Found {len(jobs)} jobs on page {page + 1}")
                 # Log redirect information from the last request
                 if hasattr(api1, 'client') and hasattr(api1.client, 'session'):
                     last_response = getattr(api1.client.session, 'last_response', None)
                     if last_response:
-                        logger.info(f"Final URL after redirects: {last_response.url}")
-                        logger.info(f"Response status code: {last_response.status_code}")
-                        logger.info(f"Number of redirects followed: {len(last_response.history)}")
+                        print(f"Final URL after redirects: {last_response.url}")
+                        print(f"Response status code: {last_response.status_code}")
+                        print(f"Number of redirects followed: {len(last_response.history)}")
                         # Log each redirect in the chain
                         for i, redirect in enumerate(last_response.history):
-                            logger.info(f"Redirect {i+1}: {redirect.status_code} {redirect.url} -> {redirect.headers.get('Location', 'N/A')}")
+                            print(f"Redirect {i+1}: {redirect.status_code} {redirect.url} -> {redirect.headers.get('Location', 'N/A')}")
                         # Log response headers that might indicate why we're being redirected
                         important_headers = ['Location', 'Set-Cookie', 'X-Li-Error-Code', 'X-LI-UUID', 'X-RestLi-Error-Response']
                         for header in important_headers:
                             if header in last_response.headers:
-                                logger.info(f"Response header {header}: {last_response.headers[header]}")
+                                print(f"Response header {header}: {last_response.headers[header]}")
             
             except Exception as e:
-                logger.error(f"Failed to search jobs on page {page + 1}: {str(e)}")
+                print(f"Failed to search jobs on page {page + 1}: {str(e)}")
                 # Log redirect info even when there's an error
                 if hasattr(api1, 'client') and hasattr(api1.client, 'session'):
                     try:
                         # Get the last response even if it failed
                         last_response = api1.client.session.get_adapter('https://').last_response if hasattr(api1.client.session.get_adapter('https://'), 'last_response') else None
                         if last_response:
-                            logger.error(f"Error occurred at URL: {last_response.url}")
-                            logger.error(f"Redirect chain length: {len(last_response.history)}")
+                            print(f"Error occurred at URL: {last_response.url}")
+                            print(f"Redirect chain length: {len(last_response.history)}")
                             for i, redirect in enumerate(last_response.history):
-                                logger.error(f"Redirect {i+1}: {redirect.status_code} from {redirect.url}")
+                                print(f"Redirect {i+1}: {redirect.status_code} from {redirect.url}")
                     except:
                         pass
                 continue
-            logger.info(f"Found {len(jobs)} jobs on page {page + 1}")
+            print(f"Found {len(jobs)} jobs on page {page + 1}")
             
             for job in jobs:
                 result = process_job(job, api2)
+                all_jobid.add(result['job_id'])
                 if result is not None:
                     job_info = result
                     # check scraping time window to avoid duplication caused by newly posted jobs during running time
@@ -228,13 +230,13 @@ def lambda_handler(event, context):
                         continue'''
                     # avoid duplication caused by "existing jobs get pushed to later pages when new job postings during pagination"
                     if job_info['job_id'] in seen_in_current_search:
-                        logger.info(f"Skipping duplicate job {job_info['job_id']} in current search")
+                        print(f"Skipping duplicate job {job_info['job_id']} in current search")
                         continue
                     seen_in_current_search.add(job_info['job_id'])
                     all_jobs.append(job_info)
 
-            if len(jobs) < int(os.environ['SEARCH_LIMIT']):
-                logger.info(f"Found {len(jobs)} jobs which is less than limit {int(os.environ['SEARCH_LIMIT'])}, stopping search...")
+            if len(jobs) < int(SEARCH_LIMIT):
+                print(f"Found {len(jobs)} jobs which is less than limit {int(SEARCH_LIMIT)}, stopping search...")
                 break
 
         # Convert to DataFrame and save as Parquet
@@ -246,46 +248,26 @@ def lambda_handler(event, context):
             df['expire_time'] = pd.to_datetime(df['expire_time'], unit='ms', errors='coerce')
             df['reposted'] = df['reposted'].astype(bool)
             
-            # Save to Parquet format
+         
             parquet_buffer = io.BytesIO()
-            df.to_parquet(parquet_buffer, engine='pyarrow', index=False)
-            parquet_buffer.seek(0)
-            
-            # Save results to S3
-            current_date = datetime.now(timezone.utc)
-            year = current_date.strftime('%Y')
-            month = current_date.strftime('%m')
-            day = current_date.strftime('%d')
-            keyword_clean = "Data_Engineer"#keyword.replace(' ', '_')
-            jobs_base_key = f"{year}/{month}/{day}/{keyword_clean}"
-            file_name = f"{keyword_clean}-{year}{month}{day}.parquet"
-
-            # Save jobs parquet
-            s3.put_object(
-                Bucket=os.environ['LINKEDIN_DATALAKE_KEY'],
-                Key=f"raw/{jobs_base_key}/{file_name}",
-                Body=parquet_buffer.getvalue()
-            )
-            logger.info(f"Job data saved to S3: s3://{os.environ['LINKEDIN_DATALAKE_KEY']}/raw/{jobs_base_key}/")
+            df.to_parquet('sample.parquet',
+              compression='snappy')
+            df1=pd.DataFrame({job_id:all_jobid})
+            df1.to_csv('out.csv', index=False)    
+        
+    
 
         
-        return {
-            'statusCode': 200,
-            'body': json.dumps({
-                'message': 'Successfully processed jobs',
-                'jobs_processed': len(all_jobs),
-                'datalake_path': f"s3://{os.environ['LINKEDIN_DATALAKE_KEY']}/raw/{jobs_base_key}/" if all_jobs else "No jobs to save"
-            })
-        }
+        return 1
         
     except Exception as e:
-        logger.error(f"Error in lambda function: {str(e)}")
+        print(f"Error in lambda function: {str(e)}")
         raise
 
-if __name__ == "__main__":
-    lambda_handler(None, None)
 
 
 
-    cookies = RequestsCookieJar()
 
+
+
+print(local_handler())

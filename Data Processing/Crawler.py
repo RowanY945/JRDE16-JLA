@@ -1,4 +1,5 @@
 from open_linkedin_api import Linkedin
+from requests.cookies import RequestsCookieJar
 def get_j(self, job_id: str):
         """Fetch data about a given job.
         :param job_id: LinkedIn job ID
@@ -29,7 +30,9 @@ def new_evade():
 
 Linkedin.get_job=get_j
 Linkedin.default_evade=new_evade
-lk=Linkedin(username='datajr16001@gmail.com',password='Datajr@16')
+
+#lk=Linkedin(username='datajr16001@gmail.com',password='Datajr@16')
+lk=Linkedin(username='datajr16001@gmail.com',cookies='C:\Users\George\Desktop\JR AI engineer\JRDE16-JLA\Data Processing\datajr16001@gmail.com.jr')
 def get_jobid(js):
     
       return js['trackingUrn'].split(':')[-1]
@@ -67,7 +70,3 @@ post_date=job_info['listedAt']
 print(post_date)
 expire_date=job_info['expireAt']
 print(expire_date)
-apply_url=job_info['applyMethod']['com.linkedin.voyager.jobs.ComplexOnsiteApply']['companyApplyUrl']
-print(apply_url)
-company_url=job_info['companyDetails']['com.linkedin.voyager.deco.jobs.web.shared.WebJobPostingCompany']['companyResolutionResult']['url']
-print(company_url)

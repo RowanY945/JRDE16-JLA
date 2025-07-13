@@ -4,7 +4,7 @@ import time
 import open_linkedin_api.settings as settings
 from requests.cookies import RequestsCookieJar
 from typing import Optional
-
+from open_linkedin_api import Linkedin
 
 class Error(Exception):
     """Base class for other exceptions"""
@@ -51,6 +51,7 @@ class CookieRepository(object):
 
     def _load_cookies_from_cache(self, username: str) -> Optional[RequestsCookieJar]:
         cookiejar_filepath = self._get_cookies_filepath(username)
+        print(cookiejar_filepath)
         try:
             with open(cookiejar_filepath, "rb") as f:
                 cookies = pickle.load(f)
