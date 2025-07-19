@@ -89,6 +89,7 @@ def process_job(job: Dict, api2: Linkedin) -> Dict:
             job_details.get('companyName') or
             job_details.get('companyDetails', {}).get('companyName') or
             job_details.get('companyDetails', {}).get('company', {}).get('name') or
+            job_details['companyDetails']['com.linkedin.voyager.deco.jobs.web.shared.WebJobPostingCompany']['companyResolutionResult']['name']or    
             "N/A"
         )
 
@@ -252,7 +253,7 @@ def local_handler():
             parquet_buffer = io.BytesIO()
             df.to_parquet('sample.parquet',
               compression='snappy')
-            df1=pd.DataFrame({job_id:all_jobid})
+            df1 = pd.DataFrame(list(all_jobid), columns=['job_id'])
             df1.to_csv('out.csv', index=False)    
         
     
