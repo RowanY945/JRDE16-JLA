@@ -12,6 +12,7 @@ from typing import Dict, List
 import pandas as pd
 import io
 from requests.cookies import RequestsCookieJar
+import csv
 keyword="Data engineer"
 def get_j(self, job_id: str):
         """Fetch data about a given job.
@@ -88,6 +89,7 @@ def process_job(job: Dict, api2: Linkedin) -> Dict:
             job_details.get('companyName') or
             job_details.get('companyDetails', {}).get('companyName') or
             job_details.get('companyDetails', {}).get('company', {}).get('name') or
+            job_details['companyDetails']['com.linkedin.voyager.deco.jobs.web.shared.WebJobPostingCompany']['companyResolutionResult']['name']or   
             "N/A"
         )
 
@@ -139,6 +141,7 @@ def process_job(job: Dict, api2: Linkedin) -> Dict:
 
 def lambda_handler(event, context):
     """Synchronous Lambda function handler"""
+    all_jobid=set()
     try:
         current_time = int(time.time())
         past_time = current_time - 86400
@@ -220,6 +223,7 @@ def lambda_handler(event, context):
             
             for job in jobs:
                 result = process_job(job, api2)
+                all_jobid.add(result['job_id'])
                 if result is not None:
                     job_info = result
                     # check scraping time window to avoid duplication caused by newly posted jobs during running time
@@ -248,17 +252,21 @@ def lambda_handler(event, context):
             
             # Save to Parquet format
             parquet_buffer = io.BytesIO()
+            
             df.to_parquet(parquet_buffer, engine='pyarrow', index=False)
             parquet_buffer.seek(0)
-            
+          
             # Save results to S3
             current_date = datetime.now(timezone.utc)
             year = current_date.strftime('%Y')
             month = current_date.strftime('%m')
             day = current_date.strftime('%d')
             keyword_clean = "Data_Engineer"#keyword.replace(' ', '_')
+            keyword_clean_csv = "Data_Engineer_jobid"#keyword.replace(' ', '_')
             jobs_base_key = f"{year}/{month}/{day}/{keyword_clean}"
+            jobs_base_key_csv = f"{year}/{month}/{day}/{keyword_clean_csv}"
             file_name = f"{keyword_clean}-{year}{month}{day}.parquet"
+            file_name_csv= f"{keyword_clean_csv}-{year}{month}{day}.csv"
 
             # Save jobs parquet
             s3.put_object(
@@ -267,6 +275,20 @@ def lambda_handler(event, context):
                 Body=parquet_buffer.getvalue()
             )
             logger.info(f"Job data saved to S3: s3://{os.environ['LINKEDIN_DATALAKE_KEY']}/raw/{jobs_base_key}/")
+            #save jobid to csv format
+            csv_buffer = io.StringIO()
+            writer = csv.writer(csv_buffer)
+            writer.writerow(['Job_id'])  # CSV row name
+            for item in list(all_jobid):
+                      writer.writerow([item])
+            s3.put_object(
+                Bucket=os.environ['LINKEDIN_DATALAKE_KEY'],
+                Key=f"raw/{jobs_base_key_csv}/{file_name_csv}",
+                Body=csv_buffer.getvalue()
+            )
+            logger.info(f"Jobid saved to S3: s3://{os.environ['LINKEDIN_DATALAKE_KEY']}/raw/{jobs_base_key_csv}/")
+
+
 
         
         return {

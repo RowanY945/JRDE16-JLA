@@ -157,7 +157,7 @@ def local_handler():
 
 # Authenticate using the cookies
 # Make sure to pass an empty password when using cookies
-        api1= Linkedin(cookies=cookies1,username='datajr16001@gmail.com', password='')
+        api1= Linkedin(username='datajr16001@gmail.com', password='Datajr@16')
 
         # Initialize LinkedIn clients
        
@@ -166,7 +166,7 @@ def local_handler():
         cookies2 = RequestsCookieJar()
         cookies2.set('li_at', 'AQEDAVwTQMIFe0BUAAABmANSJvkAAAGYJ16q-VYAJ3bX0T_-lBAtWKA8LXyzIbKjF14VDsm4tfoqUdzGpCcQkE7NZwjnfF1ZMCO6ohtf4LRreyZbYR9Xa-v-qIjtsO_6yQtvJ7KNB5OF5kuUa0kc1D46', domain='www.linkedin.com')
         cookies2.set('JSESSIONID', 'ajax:4512480560839978586', domain='www.linkedin.com')
-        api2= Linkedin(cookies=cookies2,username='datajr16002@gmail.com', password='')
+        api2= Linkedin(username='datajr16002@gmail.com', password='Datajr@16')
 # Authenticate using the cookies
 # Make sure to pass an empty password when using cookies
         print("Account 2 authenticated")
