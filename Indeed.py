@@ -1,14 +1,13 @@
 import pandas as pd
 from jobspy import scrape_jobs
 import time
-from datetime import datetime, timedelta
+from datetime import datetime
 import logging
 import uuid
 
 # 配置日志
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
-
 
 def is_job_remote(job: dict, description: str) -> bool:
     """
@@ -42,7 +41,6 @@ def is_job_remote(job: dict, description: str) -> bool:
 
     return is_remote_in_attributes or is_remote_in_description or is_remote_in_location
 
-
 def is_job_hybrid(job: dict, description: str) -> bool:
     """
     Searches the description, location, and attributes to check if job is hybrid
@@ -75,7 +73,6 @@ def is_job_hybrid(job: dict, description: str) -> bool:
 
     return is_hybrid_in_attributes or is_hybrid_in_description or is_hybrid_in_location
 
-
 def infer_job_functions(description):
     """
     Infer job functions from the job description if job_function is missing.
@@ -98,7 +95,6 @@ def infer_job_functions(description):
 
     return ', '.join(functions) if functions else 'N/A'
 
-
 def infer_seniority_level(title):
     """
     Infer seniority level from the job title.
@@ -117,7 +113,6 @@ def infer_seniority_level(title):
         return 'Mid-level'
     else:
         return ''
-
 
 def infer_skills(description):
     """
@@ -138,7 +133,6 @@ def infer_skills(description):
     found_skills = [skill for skill in skills_list if skill in description]
 
     return ', '.join(found_skills) if found_skills else 'N/A'
-
 
 def scrape_data_engineer_jobs_simple(search_term="Data Engineer", location="Melbourne, VIC, Australia",
                                      results_wanted=50):
@@ -197,10 +191,7 @@ def scrape_data_engineer_jobs_simple(search_term="Data Engineer", location="Melb
             jobs['skills'] = jobs['description'].apply(infer_skills)
             jobs['reposted'] = 'N/A'
             jobs['posted_time'] = jobs['posted_time'].apply(
-                lambda x: int(pd.to_datetime(x).timestamp()) if pd.notnull(x) else 'N/A'
-            )
-            jobs['expire_time'] = jobs['posted_time'].apply(
-                lambda x: x + (30 * 24 * 60 * 60) if isinstance(x, int) else 'N/A'
+                lambda x: pd.to_datetime(x).strftime('%Y-%m-%d %H:%M:%S.%f') if pd.notnull(x) else 'N/A'
             )
             jobs['title'] = jobs['title'].fillna('N/A')
             jobs['company'] = jobs['company'].fillna('N/A')
@@ -211,7 +202,7 @@ def scrape_data_engineer_jobs_simple(search_term="Data Engineer", location="Melb
             columns_to_keep = [
                 'job_id', 'title', 'company', 'location', 'employment_type',
                 'seniority_level', 'industries', 'job_functions', 'workplace_type',
-                'description', 'skills', 'apply_url', 'reposted', 'posted_time', 'expire_time'
+                'description', 'skills', 'apply_url', 'reposted', 'posted_time'
             ]
             jobs = jobs[columns_to_keep]
 
@@ -222,7 +213,7 @@ def scrape_data_engineer_jobs_simple(search_term="Data Engineer", location="Melb
             return pd.DataFrame(columns=[
                 'job_id', 'title', 'company', 'location', 'employment_type',
                 'seniority_level', 'industries', 'job_functions', 'workplace_type',
-                'description', 'skills', 'apply_url', 'reposted', 'posted_time', 'expire_time'
+                'description', 'skills', 'apply_url', 'reposted', 'posted_time'
             ])
 
     except Exception as e:
@@ -230,9 +221,8 @@ def scrape_data_engineer_jobs_simple(search_term="Data Engineer", location="Melb
         return pd.DataFrame(columns=[
             'job_id', 'title', 'company', 'location', 'employment_type',
             'seniority_level', 'industries', 'job_functions', 'workplace_type',
-            'description', 'skills', 'apply_url', 'reposted', 'posted_time', 'expire_time'
+            'description', 'skills', 'apply_url', 'reposted', 'posted_time'
         ])
-
 
 def scrape_multiple_locations(search_terms=None, locations=None, results_per_search=30):
     """
@@ -279,9 +269,8 @@ def scrape_multiple_locations(search_terms=None, locations=None, results_per_sea
         return pd.DataFrame(columns=[
             'job_id', 'title', 'company', 'location', 'employment_type',
             'seniority_level', 'industries', 'job_functions', 'workplace_type',
-            'description', 'skills', 'apply_url', 'reposted', 'posted_time', 'expire_time'
+            'description', 'skills', 'apply_url', 'reposted', 'posted_time'
         ])
-
 
 def save_raw_data(df, filename_prefix="au_data_engineer_jobs"):
     """
@@ -305,7 +294,6 @@ def save_raw_data(df, filename_prefix="au_data_engineer_jobs"):
     print(f"Total jobs: {len(df)}")
     print(f"Number of columns: {len(df.columns)}")
     print(f"Columns: {list(df.columns)}")
-
 
 def main():
     """
@@ -335,10 +323,8 @@ def main():
         print(f"Apply URL: {df.iloc[0].get('apply_url', 'N/A')}")
         print(f"Reposted: {df.iloc[0].get('reposted', 'N/A')}")
         print(f"Posted Time: {df.iloc[0].get('posted_time', 'N/A')}")
-        print(f"Expire Time: {df.iloc[0].get('expire_time', 'N/A')}")
     else:
         print("No jobs found")
-
 
 if __name__ == "__main__":
     print("Ensure dependencies are installed:")
