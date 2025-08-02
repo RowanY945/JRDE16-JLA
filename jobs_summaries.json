@@ -1,0 +1,1802 @@
+[
+  {
+    "Job Information": {
+      "Job Title": "Staff Frontend Engineer",
+      "Job Level": "Senior",
+      "Work Type": "Hybrid"
+    },
+    "Compensation": {
+      "Min Salary": null,
+      "Max Salary": null
+    },
+    "Overview": "The Staff Frontend Engineer will lead initiatives to enhance Canva's web platform by driving product performance improvements and collaborating across multiple teams to shape scalable solutions.",
+    "Responsibilities": [
+      "Drive product performance improvements by exploring emerging technologies and applying them across key product experiences.",
+      "Lead architectural efforts around code bundling and delivery to support scale and reduce bottlenecks.",
+      "Develop tooling and systems that empower engineers with visibility into performance regressions before they reach production.",
+      "Collaborate across multiple teams to lead technically complex, large-scale initiatives.",
+      "Shape the future of Canva’s web platform to support millions of users while enabling sustainable engineering growth."
+    ],
+    "Requirements": {
+      "Skills": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "MobX",
+        "Node.js",
+        "Java"
+      ],
+      "Experience": {
+        "Years_min": 5,
+        "Level": "senior"
+      },
+      "Qualifications": [
+        "Deep experience with core web technologies and backend stacks.",
+        "Strong grasp of build systems and performance tooling.",
+        "History of leading end-to-end technical initiatives.",
+        "Experience operating in large-scale environments.",
+        "Practical experience creating and advocating for performance observability systems."
+      ]
+    },
+    "job_id": "4260906079"
+  },
+  {
+    "Job Information": {
+      "Job Title": "Staff Software Engineer",
+      "Job Level": "Senior",
+      "Work Type": "Hybrid"
+    },
+    "Compensation": {
+      "Min Salary": null,
+      "Max Salary": null
+    },
+    "Overview": "The Staff Software Engineer will lead the evolution of Canva AI's frontend architecture, ensuring seamless integration of features and fostering collaboration across teams to enhance user experiences.",
+    "Responsibilities": [
+      "Lead the evolution of Canva AI's frontend architecture.",
+      "Re-architect Canva AI’s frontend foundation for seamless integration of new capabilities.",
+      "Drive critical integration projects from idea to production.",
+      "Mentor engineers and champion best practices in frontend engineering.",
+      "Collaborate cross-functionally to evolve Canva AI into a unified platform."
+    ],
+    "Requirements": {
+      "Skills": [
+        "Frontend development",
+        "Backend development",
+        "Machine learning integration"
+      ],
+      "Experience": {
+        "years_min": 5,
+        "level": "senior"
+      },
+      "Qualifications": [
+        "Experience in technical leadership",
+        "Hands-on coding experience",
+        "Full-stack mindset with deep frontend expertise",
+        "Ability to engage senior stakeholders"
+      ]
+    },
+    "job_id": "4260904130"
+  },
+  {
+    "Job Information": {
+      "Job Title": "Big Data Engineer",
+      "Job Level": "Mid-level",
+      "Work Type": "Hybrid"
+    },
+    "Compensation": {
+      "Min Salary": null,
+      "Max Salary": null
+    },
+    "Overview": "The Big Data Engineer at Doohly will design, develop, and maintain scalable data pipelines and architectures to enhance digital out-of-home advertising. This role involves working with large datasets and integrating data solutions into the company's platform.",
+    "Responsibilities": [
+      "Design and develop scalable data pipelines and architectures",
+      "Build ETL processes and implement data warehousing solutions",
+      "Collaborate with software development teams to integrate data solutions",
+      "Work with large datasets",
+      "Design and build BI reporting solutions"
+    ],
+    "Requirements": {
+      "Skills": [
+        "Data Engineering",
+        "Big Data",
+        "Data Warehousing",
+        "ETL processes",
+        "Event-driven architectures",
+        "ClickHouse",
+        "Terradata",
+        "BI reporting solutions",
+        "ML solutions",
+        "AI solutions",
+        "Typescript",
+        "Node",
+        "JVM",
+        "Dotnet",
+        "Rust"
+      ],
+      "Experience": {
+        "Years Min": 3,
+        "Level": "Mid"
+      },
+      "Qualifications": [
+        "Experience in Data Engineering, Big Data, and Data Warehousing",
+        "Training and/or certification in relevant fields",
+        "Bachelor's degree in Computer Science, Engineering, or a related technical field",
+        "Relevant experience in digital advertising or a related field is a plus"
+      ]
+    },
+    "job_id": "4273003803"
+  },
+  {
+    "Job Information": {
+      "job_title": "Staff Software Engineer",
+      "job_level": "Lead",
+      "work_type": "Hybrid"
+    },
+    "Compensation": {
+      "min_salary": null,
+      "max_salary": null
+    },
+    "Overview": "The Staff Software Engineer will lead the evolution of Canva AI's frontend architecture, ensuring seamless integration of features and providing technical leadership to enhance user experiences across the platform.",
+    "Responsibilities": [
+      "Lead the evolution of the frontend architecture of Canva AI.",
+      "Re-architect Canva AI’s frontend foundation to enable seamless integration of new capabilities.",
+      "Drive critical integration projects from idea to production, introducing Canva AI to new product surfaces.",
+      "Collaborate cross-functionally to evolve Canva AI into a unified, accessible platform.",
+      "Mentor engineers and champion best practices to elevate frontend engineering standards."
+    ],
+    "Requirements": {
+      "Skills": [
+        "frontend architecture",
+        "backend integration",
+        "machine learning integration",
+        "scalable frameworks",
+        "technical leadership"
+      ],
+      "Experience": {
+        "years_min": 5,
+        "level": "senior"
+      },
+      "Qualifications": [
+        "Experience as a technical leader",
+        "Hands-on coding experience",
+        "Full-stack mindset with deep frontend expertise",
+        "Ability to drive high-impact projects with autonomy",
+        "Confidence in engaging senior stakeholders"
+      ]
+    },
+    "job_id": "4258806816"
+  },
+  {
+    "Job Information": {
+      "Job Title": "Staff Frontend Engineer",
+      "Job Level": "Senior",
+      "Work Type": "Hybrid"
+    },
+    "Compensation": {
+      "Min Salary": null,
+      "Max Salary": null
+    },
+    "Overview": "The Staff Frontend Engineer will lead initiatives across multiple platform teams to enhance Canva's web platform, focusing on product performance improvements and scalable architecture.",
+    "Responsibilities": [
+      "Drive product performance improvements by exploring emerging technologies and applying them across key product experiences.",
+      "Lead architectural efforts around code bundling and delivery, evaluating and evolving systems to support scale and reduce bottlenecks.",
+      "Develop tooling and systems that empower engineers with visibility into performance regressions before they reach production.",
+      "Collaborate across multiple teams to lead technically complex, large-scale initiatives.",
+      "Shape the future of Canva’s web platform, blending product impact with infrastructure evolution."
+    ],
+    "Requirements": {
+      "Skills": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "MobX",
+        "Node.js",
+        "Java"
+      ],
+      "Experience": {
+        "Years_min": 5,
+        "Level": "Senior"
+      },
+      "Qualifications": [
+        "Deep experience with core web technologies and backend stacks.",
+        "Strong grasp of build systems and performance tooling.",
+        "History of leading end-to-end technical initiatives.",
+        "Experience operating in large-scale environments.",
+        "Ability to translate performance metrics into real user impact."
+      ]
+    },
+    "job_id": "4258805835"
+  },
+  {
+    "Job Information": {
+      "job_title": "Software Engineer",
+      "job_level": "Mid-level",
+      "work_type": "Hybrid"
+    },
+    "Compensation": {
+      "min_salary": 100000,
+      "max_salary": 185000
+    },
+    "Overview": "Join Rokt as a product builder to develop AI-powered infrastructure that scales machine learning across the business, driving measurable impact and revenue growth.",
+    "Responsibilities": [
+      "Design and build innovative products using AI and machine learning.",
+      "Accelerate development with AI-driven tools and automation.",
+      "Own the full product lifecycle from ideation to continuous improvement.",
+      "Collaborate with cross-functional teams to implement AI-driven solutions.",
+      "Identify performance bottlenecks and optimize algorithms for scalability."
+    ],
+    "Requirements": {
+      "Skills": [
+        "AI frameworks",
+        "Machine learning",
+        "Automation tools"
+      ],
+      "Experience": {
+        "years_min": 3,
+        "level": "mid"
+      },
+      "Qualifications": [
+        "Experience in developing scalable solutions",
+        "Proven track record of driving revenue growth through innovative features",
+        "Strong problem-solving skills and entrepreneurial mindset"
+      ]
+    },
+    "job_id": "4249726422"
+  },
+  {
+    "Job Information": {
+      "Job Title": "Business Intelligence Analyst",
+      "Job Level": "Mid-level",
+      "Work Type": "Hybrid"
+    },
+    "Compensation": {
+      "Min Salary": null,
+      "Max Salary": null
+    },
+    "Overview": "The Business Intelligence Analyst will deliver insightful, accurate, and timely reporting to support business functions like Finance, Marketing, and Operations, combining technical proficiency in data tools with strong communication skills.",
+    "Responsibilities": [
+      "Deliver insightful and accurate reporting to support business functions",
+      "Engage with multiple business stakeholders to gather requirements",
+      "Utilize SQL and Python for data analysis and reporting",
+      "Develop and maintain Power BI dashboards",
+      "Support financial modeling and cause-effect analysis"
+    ],
+    "Requirements": {
+      "Skills": [
+        "SQL",
+        "Python",
+        "Power BI",
+        "DAX",
+        "Jedox",
+        "Oracle NetSuite",
+        "TASK POS"
+      ],
+      "Experience": {
+        "Years Min": null,
+        "Level": "mid"
+      },
+      "Qualifications": [
+        "Tertiary qualification in Information Technology, Data Science or Finance",
+        "Strong technical proficiency in SQL, Python, and Power BI",
+        "Experience with financial planning and modeling tools"
+      ]
+    },
+    "job_id": "4272788050"
+  },
+  {
+    "Job Information": {
+      "Job Title": "Data Engineer",
+      "Job Level": "Senior",
+      "Work Type": "Hybrid"
+    },
+    "Compensation": {
+      "Min Salary": null,
+      "Max Salary": null
+    },
+    "Overview": "The Data Engineer will lead AWS data builds in a major transformation program, focusing on modernizing information systems and enhancing data workflows through migration pipelines using Python and SQL.",
+    "Responsibilities": [
+      "Build and maintain scalable data migration pipelines using AWS SQL and Python",
+      "Conduct advanced data analysis to troubleshoot and resolve migration or integration issues",
+      "Develop ETL/ELT processes to support business and financial data transformation",
+      "Automate tasks using Bash and/or PowerShell for improved efficiency and reliability",
+      "Collaborate with stakeholders to ensure data integrity quality and reporting accuracy"
+    ],
+    "Requirements": {
+      "Skills": [
+        "AWS",
+        "Python",
+        "SQL",
+        "ETL",
+        "ELT",
+        "Bash",
+        "PowerShell"
+      ],
+      "Experience": {
+        "Years_min": 5,
+        "Level": "senior"
+      },
+      "Qualifications": [
+        "Strong experience as a Data Engineer or in a similar role with a focus on large data migrations",
+        "Strong proficiency in AWS services Python SQL and modern ETL/ELT tools",
+        "Proven experience analysing and resolving complex data integration issues",
+        "Skilled in scripting Bash and/or PowerShell for automation and optimisation",
+        "Excellent communication and stakeholder engagement skills in cross-functional environments"
+      ]
+    },
+    "job_id": "4275616328"
+  },
+  {
+    "Job Information": {
+      "job_title": "Senior Data Engineer",
+      "job_level": "Senior",
+      "work_type": "On-site"
+    },
+    "Compensation": {
+      "min_salary": null,
+      "max_salary": null
+    },
+    "Overview": "The Senior Data Engineer at Simple Machines is a hands-on role focused on building real-time data pipelines and implementing data mesh architectures to enhance client data interactions, blending technical expertise with a client-facing consulting approach.",
+    "Responsibilities": [
+      "Design and architect scalable solutions using Databricks Lakehouse Architecture.",
+      "Develop and enhance data-driven solutions integrating with clients' systems.",
+      "Develop and optimise high-performance batch and real-time data pipelines.",
+      "Implement and oversee cloud-specific data services.",
+      "Ensure all data practices comply with security policies and regulations."
+    ],
+    "Requirements": {
+      "skills": [
+        "Databricks",
+        "SQL",
+        "Spark",
+        "AWS S3",
+        "Google Cloud BigQuery",
+        "Cassandra",
+        "MongoDB",
+        "Neo4J",
+        "HDFS",
+        "AWS Glue",
+        "Apache Airflow",
+        "dbt",
+        "Kafka",
+        "AWS Kinesis",
+        "Google Cloud Pub/Sub",
+        "Azure Event Hubs",
+        "Parquet",
+        "Delta",
+        "ORC",
+        "Avro",
+        "JSON",
+        "Python",
+        "Java",
+        "Scala",
+        "GoLang",
+        "Rust",
+        "Terraform",
+        "Pulumi",
+        "GitHub Actions",
+        "ArgoCD",
+        "DBT",
+        "Great Expectations",
+        "Soda"
+      ],
+      "experience": {
+        "years_min": 8,
+        "level": "senior"
+      },
+      "qualifications": [
+        "At least 8+ years of data engineering or equivalent experience in a commercial, enterprise, or start-up environment.",
+        "Consulting experience within a technology consultancy or professional services firm is highly beneficial.",
+        "Degree or equivalent experience in computer science or a related field."
+      ]
+    },
+    "job_id": "4270859335"
+  },
+  {
+    "Job Information": {
+      "Job Title": "Data Engineer",
+      "Job Level": "Mid-level",
+      "Work Type": "Hybrid"
+    },
+    "Compensation": {
+      "Min Salary": 800,
+      "Max Salary": 850
+    },
+    "Overview": "This role is ideal for someone who excels in data engineering and has strong core development capabilities, particularly in building scalable integrations and backend services.",
+    "Responsibilities": [
+      "Design and develop next-generation data platforms and pipeline solutions.",
+      "Build and maintain backend services and integrations using Java Spring Boot.",
+      "Collaborate with engineering peers to co-create and contribute to shared practices and frameworks.",
+      "Transform and process source data into data products.",
+      "Develop efficient Data Lake frameworks using Scala, PySpark, or Python."
+    ],
+    "Requirements": {
+      "Skills": [
+        "Java",
+        "Spring Boot",
+        "RESTful API",
+        "Python",
+        "SQL",
+        "Spark",
+        "Scala",
+        "AWS Glue",
+        "Lambda",
+        "Redshift",
+        "Athena",
+        "Kinesis",
+        "EMR",
+        "CI/CD",
+        "GitHub",
+        "GitHub Actions",
+        "TeamCity",
+        "Observe",
+        "Splunk",
+        "Prometheus",
+        "Grafana",
+        "AWS DataZone",
+        "Lake Formation",
+        "IAM"
+      ],
+      "Experience": {
+        "Years Min": 3,
+        "Level": "Mid"
+      },
+      "Qualifications": [
+        "Strong experience in Java, Spring Boot, and RESTful API development.",
+        "Familiarity with CI/CD tools.",
+        "Experience with observability tools.",
+        "Exposure to AI/ML technologies."
+      ]
+    },
+    "job_id": "4268506741"
+  },
+  {
+    "Job Information": {
+      "Job Title": "Software Engineer",
+      "Job Level": "Mid-level",
+      "Work Type": "Hybrid"
+    },
+    "Compensation": {
+      "Min Salary": null,
+      "Max Salary": null
+    },
+    "Overview": "The position involves building and maintaining the landing page rendering platform at Canva, focusing on engineering new solutions and advocating for best practices to ensure high quality.",
+    "Responsibilities": [
+      "Build components and frameworks for performant web pages",
+      "Collaborate with leads, product managers, and engineers across teams",
+      "Facilitate knowledge sharing and advocate for best practices",
+      "Set up observability and monitoring capabilities",
+      "Identify and address performance bottlenecks"
+    ],
+    "Requirements": {
+      "Skills": [
+        "Typescript",
+        "React",
+        "MobX",
+        "Webpack",
+        "NodeJS",
+        "NextJS",
+        "GraphQL"
+      ],
+      "Experience": {
+        "Years_min": 3,
+        "Level": "mid"
+      },
+      "Qualifications": [
+        "Commercial experience in a software development environment",
+        "Experience developing rich web applications",
+        "Firm understanding of server side rendering technologies",
+        "Grounded knowledge in computer science and web fundamentals"
+      ]
+    },
+    "job_id": "4260901467"
+  },
+  {
+    "Job Information": {
+      "Job Title": "Technical Leader - Core Infrastructure",
+      "Job Level": "Senior",
+      "Work Type": "Hybrid"
+    },
+    "Compensation": {
+      "Min Salary": null,
+      "Max Salary": null
+    },
+    "Overview": "The Technical Leader in the Core Infrastructure Group will provide technical leadership across high-impact infrastructure projects, focusing on cloud-native solutions and mentoring a distributed team of engineers.",
+    "Responsibilities": [
+      "Provide technical leadership across high-impact infrastructure projects.",
+      "Define architectural direction for core platform services with a focus on scalability and reliability.",
+      "Mentor and empower a distributed team of engineers.",
+      "Shape the strategic roadmap for Platform Enablement by driving long-term initiatives.",
+      "Champion operational excellence to ensure platform reliability and efficiency."
+    ],
+    "Requirements": {
+      "Skills": [
+        "AWS",
+        "GCP",
+        "Go",
+        "Python",
+        "Java",
+        "Infrastructure as Code",
+        "Kubernetes",
+        "CI/CD",
+        "Automation",
+        "Site Reliability"
+      ],
+      "Experience": {
+        "years_min": 7,
+        "level": "senior"
+      },
+      "Qualifications": [
+        "7+ years of experience in software engineering",
+        "Strong foundation in infrastructure and cloud platforms",
+        "Deep hands-on experience with programming languages such as Go, Python, or Java",
+        "Experience leading large-scale infrastructure projects"
+      ]
+    },
+    "job_id": "4262242012"
+  },
+  {
+    "Job Information": {
+      "Job Title": "Staff Software Engineer",
+      "Job Level": "Senior",
+      "Work Type": "Hybrid"
+    },
+    "Compensation": {
+      "Min Salary": null,
+      "Max Salary": null
+    },
+    "Overview": "As a versatile staff software engineer within the API Platform team, you will help shape the vision of Canva's platform and guide its implementation to support billions of users.",
+    "Responsibilities": [
+      "Define the technical roadmap and architecture for API platforms.",
+      "Become an authority in API architecture and service communication.",
+      "Propose innovative approaches to future-proof Canva's distributed cloud infrastructure.",
+      "Guide the implementation of major projects and assist in task breakdown.",
+      "Provide guidance and mentorship to other engineers."
+    ],
+    "Requirements": {
+      "Skills": [
+        "Java",
+        "Scala",
+        "Python",
+        "Typescript",
+        "Asynchronous programming",
+        "Reactive programming",
+        "Concurrency",
+        "Data structures",
+        "Distributed systems",
+        "Resiliency techniques",
+        "AWS",
+        "gRPC",
+        "HTTP/2",
+        "protobuf",
+        "WebSockets"
+      ],
+      "Experience": {
+        "years_min": 10,
+        "level": "senior"
+      },
+      "Qualifications": [
+        "10+ years of commercial experience developing distributed web applications",
+        "Experience with architectural changes and problem-solving",
+        "Deep knowledge of computer science fundamentals",
+        "Experience working in large distributed cloud environments"
+      ]
+    },
+    "job_id": "4262242001"
+  },
+  {
+    "Job Information": {
+      "Job Title": "Lead Developer for Analytics Platform",
+      "Job Level": "Senior",
+      "Work Type": "Hybrid"
+    },
+    "Compensation": {
+      "Min Salary": null,
+      "Max Salary": null
+    },
+    "Overview": "The position focuses on leading the design and development of next-generation Analytics Platform features, making data insights accessible and scalable for all Canva teams.",
+    "Responsibilities": [
+      "Lead the design and development of next-generation Analytics Platform features.",
+      "Develop APIs and developer tools for data interaction and visualization.",
+      "Drive continuous improvement of CI/CD pipelines and SRE practices.",
+      "Prototype and ship innovative AI-driven features.",
+      "Collaborate across cross-functional teams on high-impact projects."
+    ],
+    "Requirements": {
+      "Skills": [
+        "Python",
+        "Kubernetes",
+        "AWS EKS",
+        "AWS EC2",
+        "AWS Lambda",
+        "AWS DynamoDB",
+        "AWS RDS",
+        "AWS S3",
+        "IaC",
+        "CI/CD",
+        "SRE"
+      ],
+      "Experience": {
+        "years_min": 5,
+        "level": "senior"
+      },
+      "Qualifications": [
+        "Proficiency in Python and hands-on experience with Kubernetes.",
+        "Strong knowledge of AWS services.",
+        "Deep knowledge of Computer Engineering fundamentals.",
+        "Experience in building scalable platforms and solving complex software challenges.",
+        "Good understanding of IaC, CI/CD, and SRE principles."
+      ]
+    },
+    "job_id": "4262240223"
+  },
+  {
+    "Job Information": {
+      "Job Title": "Platform Engineer",
+      "Job Level": "Mid-level",
+      "Work Type": "Hybrid"
+    },
+    "Compensation": {
+      "Min Salary": null,
+      "Max Salary": null
+    },
+    "Overview": "The Platform Engineer role at Canva focuses on understanding the needs of platform engineers and enhancing their workflows by providing tools and services that ensure a low-friction experience in shipping new capabilities.",
+    "Responsibilities": [
+      "Deeply understand the needs and workflows of platform engineers and other consumers of the infrastructure platform.",
+      "Write tools, services, and configurations to ensure platform engineers have a low-friction experience.",
+      "Consult with internal users and other platform teams for clarity and alignment.",
+      "Take ownership of existing configuration frameworks and infrastructure abstraction tools.",
+      "Participate in planning rituals to prioritize the needs of platform engineers and infrastructure consumers."
+    ],
+    "Requirements": {
+      "Skills": [
+        "Python",
+        "Go",
+        "Kubernetes",
+        "AWS",
+        "GCP",
+        "AI tooling"
+      ],
+      "Experience": {
+        "Years_Min": 2,
+        "Level": "mid"
+      },
+      "Qualifications": [
+        "Experience in platform engineering is desired but not required.",
+        "Excellent communication and stakeholder engagement.",
+        "Prior experience as a consultant, business analyst, or developer advocate is beneficial."
+      ]
+    },
+    "job_id": "4262241162"
+  },
+  {
+    "Job Information": {
+      "Job Title": "Staff Frontend Engineer",
+      "Job Level": "Senior",
+      "Work Type": "Hybrid"
+    },
+    "Compensation": {
+      "Min Salary": null,
+      "Max Salary": null
+    },
+    "Overview": "The Staff Frontend Engineer will drive product performance improvements and lead architectural efforts to enhance Canva's web platform, collaborating across teams to deliver scalable solutions.",
+    "Responsibilities": [
+      "Drive product performance improvements by exploring emerging technologies and applying them across key product experiences.",
+      "Lead architectural efforts around code bundling and delivery, evaluating and evolving systems to support scale.",
+      "Develop tooling and systems that empower engineers with visibility into performance regressions before they reach production.",
+      "Collaborate across multiple teams to lead technically complex, large-scale initiatives.",
+      "Shape the future of Canva’s web platform, blending product impact with infrastructure evolution."
+    ],
+    "Requirements": {
+      "Skills": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "MobX",
+        "Node.js",
+        "Java"
+      ],
+      "Experience": {
+        "Years Min": 5,
+        "Level": "Senior"
+      },
+      "Qualifications": [
+        "Deep experience with core web technologies and backend stacks.",
+        "Strong grasp of build systems and performance tooling.",
+        "History of leading end-to-end technical initiatives.",
+        "Experience operating in large-scale environments.",
+        "Practical experience creating and advocating for performance observability systems."
+      ]
+    },
+    "job_id": "4262240209"
+  },
+  {
+    "Job Information": {
+      "Job Title": "Senior Machine Learning Engineer",
+      "Job Level": "Senior",
+      "Work Type": "Hybrid"
+    },
+    "Compensation": {
+      "Min Salary": 200000,
+      "Max Salary": 225000
+    },
+    "Overview": "The Senior Machine Learning Engineer will collaborate with engineering and product teams to design, build, and productionize proprietary machine learning models to address various business challenges.",
+    "Responsibilities": [
+      "Collaborate with product managers and engineers to understand business priorities and frame machine learning problems.",
+      "Build and productionize machine learning models including data preparation and processing pipelines.",
+      "Contribute to maintaining high code quality with comprehensive testing.",
+      "Research emerging technologies and prototype new modeling ideas.",
+      "Share knowledge through presentations and discussions on tech and engineering best practices."
+    ],
+    "Requirements": {
+      "Skills": [
+        "Bayesian methods",
+        "Recommender systems",
+        "multi-task modelling",
+        "meta-learning",
+        "click through rate modelling",
+        "conversion rate modelling",
+        "Kubeflow",
+        "Tensorflow",
+        "Feature Store"
+      ],
+      "Experience": {
+        "years_min": 3,
+        "level": "senior"
+      },
+      "Qualifications": [
+        "Masters or PhD in Machine Learning",
+        "Extensive knowledge in machine learning areas mentioned",
+        "Experience in building production-grade machine learning systems"
+      ]
+    },
+    "job_id": "4242713114"
+  },
+  {
+    "Job Information": {
+      "job_title": "Staff Software Engineer",
+      "job_level": "Senior",
+      "work_type": "Hybrid"
+    },
+    "Compensation": {
+      "min_salary": null,
+      "max_salary": null
+    },
+    "Overview": "The Staff Software Engineer will play a leading role in defining the technical roadmap and architecture for API platforms at Canva, focusing on complex technical challenges and guiding the implementation of major projects.",
+    "Responsibilities": [
+      "Define the technical roadmap and architecture for API platforms.",
+      "Become an authority in API architecture and service communication.",
+      "Design and implement intricate aspects of the system.",
+      "Guide the implementation of major projects and assist in task breakdown.",
+      "Provide guidance and mentorship to other engineers."
+    ],
+    "Requirements": {
+      "skills": [
+        "Java",
+        "Scala",
+        "Python",
+        "Typescript",
+        "asynchronous programming",
+        "reactive programming",
+        "concurrency",
+        "data structures",
+        "distributed systems",
+        "resiliency techniques",
+        "load balancing",
+        "throttling",
+        "back pressure",
+        "circuit breaking",
+        "AWS",
+        "gRPC",
+        "HTTP/2",
+        "protobuf",
+        "WebSockets"
+      ],
+      "experience": {
+        "years_min": 10,
+        "level": "senior"
+      },
+      "qualifications": [
+        "10+ years of commercial experience developing distributed web applications",
+        "Experience with planning and executing architectural changes",
+        "Strong communication and teamwork skills",
+        "Experience guiding and mentoring other engineers"
+      ]
+    },
+    "job_id": "4262231883"
+  },
+  {
+    "Job Information": {
+      "Job Title": "Software Engineer - Pages Platform",
+      "Job Level": "Mid-level",
+      "Work Type": "Hybrid"
+    },
+    "Compensation": {
+      "Min Salary": null,
+      "Max Salary": null
+    },
+    "Overview": "The role involves building and maintaining the landing page rendering platform at Canva, focusing on engineering new solutions and providing technical guidance to meet stakeholder needs.",
+    "Responsibilities": [
+      "Build components and frameworks for rapid and reliable web page management",
+      "Collaborate with leads, product managers, and engineers to build effective solutions",
+      "Facilitate knowledge sharing and advocate for best practices",
+      "Set up observability and monitoring capabilities for platform health",
+      "Participate in design and code reviews"
+    ],
+    "Requirements": {
+      "Skills": [
+        "Typescript",
+        "React",
+        "MobX",
+        "Webpack",
+        "NodeJS",
+        "NextJS",
+        "GraphQL"
+      ],
+      "Experience": {
+        "years_min": 3,
+        "level": "mid"
+      },
+      "Qualifications": [
+        "Commercial experience in a software development environment",
+        "Experience developing rich web applications",
+        "Firm understanding of web front-end tooling",
+        "Experience optimizing web page performance",
+        "Understanding of server-side rendering technologies"
+      ]
+    },
+    "job_id": "4260904138"
+  },
+  {
+    "Job Information": {
+      "Job Title": "Staff Frontend Engineer",
+      "Job Level": "Senior",
+      "Work Type": "Hybrid"
+    },
+    "Compensation": {
+      "Min Salary": null,
+      "Max Salary": null
+    },
+    "Overview": "The Staff Frontend Engineer will lead initiatives across multiple product teams to enhance Canva's web platform, focusing on product performance improvements and scalable architecture.",
+    "Responsibilities": [
+      "Drive product performance improvements by exploring emerging technologies.",
+      "Lead architectural efforts around code bundling and delivery.",
+      "Develop tooling and systems for performance regression detection.",
+      "Collaborate across teams on complex initiatives to drive scalable solutions.",
+      "Shape the future of Canva’s web platform to support millions of users."
+    ],
+    "Requirements": {
+      "Skills": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "MobX",
+        "Node.js",
+        "Java"
+      ],
+      "Experience": {
+        "Years_min": 5,
+        "Level": "Senior"
+      },
+      "Qualifications": [
+        "Deep experience with core web technologies and backend stacks.",
+        "Strong grasp of build systems and performance tooling.",
+        "History of leading end-to-end technical initiatives.",
+        "Experience operating in large-scale environments.",
+        "Ability to translate performance metrics into user impact."
+      ]
+    },
+    "job_id": "4260902207"
+  },
+  {
+    "Job Information": {
+      "job_title": "Software Engineer",
+      "job_level": "Mid-level",
+      "work_type": "Hybrid"
+    },
+    "Compensation": {
+      "min_salary": null,
+      "max_salary": null
+    },
+    "Overview": "The Software Engineer will be part of the AWS Infrastructure Services team, responsible for designing, planning, and delivering scalable software solutions that manage and upgrade the AWS network infrastructure.",
+    "Responsibilities": [
+      "Write clean, maintainable and efficient code to develop scalable software solutions.",
+      "Drive system designs and make design decisions considering the trade-offs.",
+      "Find innovative solutions to complex technical challenges.",
+      "Mentor junior engineers and conduct code reviews.",
+      "Participate in on-call rotations."
+    ],
+    "Requirements": {
+      "skills": [
+        "software development",
+        "design patterns",
+        "reliability",
+        "scaling",
+        "programming"
+      ],
+      "experience": {
+        "years_min": 3,
+        "level": "mid"
+      },
+      "qualifications": [
+        "3+ years of non-internship professional software development experience",
+        "2+ years of non-internship design or architecture experience",
+        "Experience programming with at least one software programming language",
+        "Bachelor's degree in computer science or equivalent"
+      ]
+    },
+    "job_id": "4250456220"
+  },
+  {
+    "Job Information": {
+      "Job Title": "Staff Software Engineer",
+      "Job Level": "Lead",
+      "Work Type": "Hybrid"
+    },
+    "Compensation": {
+      "Min Salary": null,
+      "Max Salary": null
+    },
+    "Overview": "The Staff Software Engineer will lead the evolution of Canva AI's frontend architecture, ensuring seamless integration of features and providing technical leadership to enhance user experiences.",
+    "Responsibilities": [
+      "Lead the re-architecting of Canva AI’s frontend foundation for seamless integration of new capabilities.",
+      "Drive critical integration projects from idea to production, including introducing Canva AI to new product surfaces.",
+      "Mentor engineers and champion best practices to elevate frontend engineering standards.",
+      "Collaborate cross-functionally to evolve Canva AI into a unified, accessible platform.",
+      "Establish yourself as a trusted technical leader, resolving technical debt and earning credibility through impact."
+    ],
+    "Requirements": {
+      "Skills": [
+        "Frontend expertise",
+        "Backend knowledge",
+        "Machine learning integration"
+      ],
+      "Experience": {
+        "years_min": 5,
+        "level": "senior"
+      },
+      "Qualifications": [
+        "Experienced technical leader",
+        "Hands-on coding experience",
+        "Ability to connect work to company-wide priorities",
+        "Ownership and autonomy in driving high-impact projects",
+        "Confidence in engaging senior stakeholders"
+      ]
+    },
+    "job_id": "4260904137"
+  },
+  {
+    "Job Information": {
+      "job_title": "Senior Backend Software Engineer",
+      "job_level": "Senior",
+      "work_type": "Hybrid"
+    },
+    "Compensation": {
+      "min_salary": null,
+      "max_salary": null
+    },
+    "Overview": "The Senior Backend Software Engineer will lead technical initiatives, improve the developer experience at the edge, and influence platform direction while mentoring teammates and contributing to cross-team initiatives.",
+    "Responsibilities": [
+      "Design and implement core components of the edge platform, including worker frameworks and infrastructure automation.",
+      "Lead initiatives to improve system reliability, performance, and security.",
+      "Collaborate with multiple teams to define high-impact solutions.",
+      "Investigate and resolve complex operational incidents.",
+      "Contribute to the team’s technical strategy and roadmap."
+    ],
+    "Requirements": {
+      "Skills": [
+        "JavaScript",
+        "TypeScript",
+        "Python",
+        "Java",
+        "Terraform",
+        "CI/CD",
+        "observability",
+        "security",
+        "DNS",
+        "Firewall",
+        "Security",
+        "Load Balancing",
+        "CDN",
+        "Edge Computing",
+        "Cloudflare Workers"
+      ],
+      "Experience": {
+        "years_min": 5,
+        "level": "senior"
+      },
+      "Qualifications": [
+        "Hands-on experience with at least one major edge provider such as Cloudflare, Fastly, or Akamai.",
+        "Experience building and managing Cloudflare Workers or similar edge runtime environments.",
+        "Experience improving operational health and reducing tech debt."
+      ]
+    },
+    "job_id": "4262239428"
+  },
+  {
+    "Job Information": {
+      "Job Title": "Technical Leader - Core Infrastructure",
+      "Job Level": "Senior",
+      "Work Type": "Hybrid"
+    },
+    "Compensation": {
+      "Min Salary": null,
+      "Max Salary": null
+    },
+    "Overview": "The role involves providing technical leadership across high-impact infrastructure projects, focusing on cloud-native solutions that enhance engineering speed and team autonomy.",
+    "Responsibilities": [
+      "Provide technical leadership across high-impact infrastructure projects.",
+      "Define architectural direction for core platform services with a focus on scalability and reliability.",
+      "Mentor and empower a distributed team of engineers.",
+      "Shape the strategic roadmap for Platform Enablement by driving long-term initiatives.",
+      "Champion operational excellence to ensure platform reliability and security."
+    ],
+    "Requirements": {
+      "Skills": [
+        "AWS",
+        "GCP",
+        "Go",
+        "Python",
+        "Java",
+        "Infrastructure as Code",
+        "Kubernetes",
+        "CI/CD",
+        "Automation",
+        "Site Reliability"
+      ],
+      "Experience": {
+        "Years Min": 7,
+        "Level": "Senior"
+      },
+      "Qualifications": [
+        "7+ years of experience in software engineering",
+        "Strong foundation in infrastructure and distributed systems",
+        "Experience leading large-scale infrastructure projects"
+      ]
+    },
+    "job_id": "4262236626"
+  },
+  {
+    "Job Information": {
+      "Job Title": "Software Engineer",
+      "Job Level": "Mid-level",
+      "Work Type": "Hybrid"
+    },
+    "Compensation": {
+      "Min Salary": null,
+      "Max Salary": null
+    },
+    "Overview": "The position involves designing, planning, delivering, and operating AWS global infrastructure, focusing on software development for network configurations and management at Amazon scale.",
+    "Responsibilities": [
+      "Adopt and champion software engineering best practices across the software development life cycle.",
+      "Communicate with users, technical teams, and senior management to collect requirements.",
+      "Develop software to emulate, deploy, and validate changes to Amazon network devices.",
+      "Collaborate with diverse teams to ensure safety and security standards are met.",
+      "Handle the complete software development lifecycle including defining, prioritizing, designing, building, and testing."
+    ],
+    "Requirements": {
+      "Skills": [
+        "software development",
+        "design patterns",
+        "reliability",
+        "scaling",
+        "programming"
+      ],
+      "Experience": {
+        "years_min": 3,
+        "level": "mid"
+      },
+      "Qualifications": [
+        "3+ years of non-internship professional software development experience",
+        "2+ years of non-internship design or architecture experience",
+        "Experience programming with at least one software programming language",
+        "Bachelor's degree in computer science or equivalent"
+      ]
+    },
+    "job_id": "4249627101"
+  },
+  {
+    "Job Information": {
+      "Job Title": "Technical Leader - Core Infrastructure",
+      "Job Level": "Senior",
+      "Work Type": "Hybrid"
+    },
+    "Compensation": {
+      "Min Salary": null,
+      "Max Salary": null
+    },
+    "Overview": "The Technical Leader in Core Infrastructure will provide technical leadership across high-impact infrastructure projects, focusing on cloud-native solutions and team autonomy while mentoring engineers and shaping strategic roadmaps.",
+    "Responsibilities": [
+      "Provide technical leadership across high-impact infrastructure projects.",
+      "Define architectural direction for core platform services with a focus on scalability and reliability.",
+      "Mentor and empower a distributed team of engineers, fostering a collaborative environment.",
+      "Shape the strategic roadmap for Platform Enablement by driving long-term initiatives.",
+      "Champion operational excellence to ensure the platform remains reliable and efficient."
+    ],
+    "Requirements": {
+      "Skills": [
+        "AWS",
+        "GCP",
+        "Go",
+        "Python",
+        "Java",
+        "Infrastructure as Code",
+        "Kubernetes",
+        "CI/CD",
+        "Automation",
+        "Site Reliability"
+      ],
+      "Experience": {
+        "Years_Min": 7,
+        "Level": "Senior"
+      },
+      "Qualifications": [
+        "Strong foundation in infrastructure and distributed systems.",
+        "Experience leading large-scale infrastructure projects.",
+        "Passion for mentoring and uplifting technical practices."
+      ]
+    },
+    "job_id": "4262235687"
+  },
+  {
+    "Job Information": {
+      "job_title": "Senior Backend Software Engineer",
+      "job_level": "Senior",
+      "work_type": "Hybrid"
+    },
+    "Compensation": {
+      "min_salary": null,
+      "max_salary": null
+    },
+    "Overview": "As a Senior Backend Software Engineer, you will lead technical initiatives, improve developer experience at the edge, and influence platform direction while mentoring teammates and contributing to cross-team initiatives.",
+    "Responsibilities": [
+      "Design and implement core components of the edge platform including worker frameworks and infrastructure automation.",
+      "Lead initiatives to improve system reliability, performance, and security.",
+      "Collaborate with multiple teams to define high-impact solutions.",
+      "Investigate and resolve complex operational incidents.",
+      "Contribute to the team’s technical strategy and roadmap."
+    ],
+    "Requirements": {
+      "Skills": [
+        "JavaScript",
+        "TypeScript",
+        "Python",
+        "Java",
+        "Terraform",
+        "CI/CD",
+        "observability",
+        "security",
+        "DNS",
+        "Firewall",
+        "Security",
+        "Load Balancing",
+        "CDN",
+        "Edge Computing",
+        "Cloudflare",
+        "Fastly",
+        "Akamai"
+      ],
+      "Experience": {
+        "years_min": 5,
+        "level": "senior"
+      },
+      "Qualifications": [
+        "Proficient in mentioned programming languages and technologies.",
+        "Hands-on experience with at least one major edge provider.",
+        "Experience improving operational health and reducing tech debt."
+      ]
+    },
+    "job_id": "4262239429"
+  },
+  {
+    "Job Information": {
+      "Job Title": "Senior Software Engineer",
+      "Job Level": "Senior",
+      "Work Type": "Hybrid"
+    },
+    "Compensation": {
+      "Min Salary": null,
+      "Max Salary": null
+    },
+    "Overview": "The Senior Software Engineer will contribute to the development and release of new TUFLOW features, enhancing and expanding core computational engines across all TUFLOW products.",
+    "Responsibilities": [
+      "Engage in a planned programme of upgrade and enhancement of the TUFLOW codebase.",
+      "Deliver software features across all products, including algorithm interpretation, code development, testing, and documentation.",
+      "Evaluate and apply standard techniques and principles to perform technical tasks.",
+      "Deliver solutions where precedent may not exist.",
+      "Contribute to technical papers and industry/conference presentations."
+    ],
+    "Requirements": {
+      "Skills": [
+        "C++",
+        "FORTRAN",
+        "GPU software development",
+        "Scientific software architecture",
+        "Code development",
+        "Version control platforms",
+        "Debugging",
+        "Optimising performance-critical applications",
+        "Windows operating system",
+        "Linux operating system",
+        "Cloud computing",
+        "Distributed computing",
+        "Parallel computing"
+      ],
+      "Experience": {
+        "Years Min": 7,
+        "Level": "Senior"
+      },
+      "Qualifications": [
+        "Tertiary qualification in Computer Science or equivalent",
+        "Direct industry experience in high performance scientific computing"
+      ]
+    },
+    "job_id": "4248560773"
+  },
+  {
+    "Job Information": {
+      "Job Title": "Software Engineer - Pages Platform",
+      "Job Level": "Mid-level",
+      "Work Type": "Hybrid"
+    },
+    "Compensation": {
+      "Min Salary": null,
+      "Max Salary": null
+    },
+    "Overview": "The Software Engineer for the Pages Platform at Canva will be responsible for building and maintaining the landing page rendering platform, focusing on engineering solutions that meet stakeholder needs while advocating for best practices.",
+    "Responsibilities": [
+      "Build components and frameworks for rapid and reliable web page management.",
+      "Collaborate with leads, product managers, and engineers across teams.",
+      "Facilitate knowledge sharing and advocate for best practices.",
+      "Set up observability and monitoring capabilities for platform health.",
+      "Identify and address performance bottlenecks."
+    ],
+    "Requirements": {
+      "Skills": [
+        "Typescript",
+        "React",
+        "MobX",
+        "Webpack",
+        "NodeJS",
+        "NextJS",
+        "GraphQL"
+      ],
+      "Experience": {
+        "years_min": 3,
+        "level": "mid"
+      },
+      "Qualifications": [
+        "Commercial experience in software development",
+        "Experience developing rich web applications",
+        "Firm understanding of web front-end tooling",
+        "Experience in optimizing web page performance",
+        "Firm understanding of server-side rendering technologies"
+      ]
+    },
+    "job_id": "4262241156"
+  },
+  {
+    "Job Information": {
+      "Job Title": "Senior Backend Software Engineer",
+      "Job Level": "Senior",
+      "Work Type": "Hybrid"
+    },
+    "Compensation": {
+      "Min Salary": null,
+      "Max Salary": null
+    },
+    "Overview": "As a Senior Backend Software Engineer at Canva, you will lead technical initiatives and improve the developer experience at the edge while influencing platform direction. Your role will encompass system architecture, performance optimization, operational health, and mentoring teammates.",
+    "Responsibilities": [
+      "Design and implement core components of the edge platform including worker frameworks and infrastructure automation.",
+      "Lead initiatives to improve system reliability, performance, and security.",
+      "Collaborate with multiple teams to define high-impact solutions.",
+      "Investigate and resolve complex operational incidents.",
+      "Contribute to the team’s technical strategy and roadmap."
+    ],
+    "Requirements": {
+      "Skills": [
+        "JavaScript",
+        "TypeScript",
+        "Python",
+        "Java",
+        "Terraform",
+        "CI/CD",
+        "observability",
+        "security",
+        "DNS",
+        "Firewall",
+        "Load Balancing",
+        "CDN",
+        "Edge Computing",
+        "Cloudflare",
+        "Fastly",
+        "Akamai"
+      ],
+      "Experience": {
+        "years_min": 5,
+        "level": "senior"
+      },
+      "Qualifications": [
+        "Hands-on experience with at least one major edge provider.",
+        "Experience building and managing Cloudflare Workers or similar edge runtime environments.",
+        "Strong understanding of operational health and tech debt."
+      ]
+    },
+    "job_id": "4262242007"
+  },
+  {
+    "Job Information": {
+      "Job Title": "Client Leader & Trusted Advisor",
+      "Job Level": "Mid-level",
+      "Work Type": "Hybrid"
+    },
+    "Compensation": {
+      "Min Salary": null,
+      "Max Salary": null
+    },
+    "Overview": "This position involves stepping into a key client-facing role within an independent insights and strategy consultancy, helping to lead complex projects across various sectors while building meaningful client relationships.",
+    "Responsibilities": [
+      "Help deliver end-to-end quantitative and mixed-method projects",
+      "Play a role in key client relationships",
+      "Develop proposal writing and presentation skills",
+      "Deliver strategic, quality-driven outputs with impact",
+      "Contribute to thought leadership content"
+    ],
+    "Requirements": {
+      "Skills": [
+        "quantitative analysis",
+        "survey design",
+        "data analysis",
+        "AI tools"
+      ],
+      "Experience": {
+        "years_min": 2,
+        "level": "mid"
+      },
+      "Qualifications": [
+        "2+ years experience in market research, insights, or consulting",
+        "Strong quantitative background",
+        "Commercially sharp with a quality-first mindset",
+        "Strategic thinker with natural curiosity and confidence",
+        "Tech-forward attitude"
+      ]
+    },
+    "job_id": "4272728674"
+  },
+  {
+    "Job Information": {
+      "Job Title": "Software Engineer - Frontend",
+      "Job Level": "Mid-level",
+      "Work Type": "Hybrid"
+    },
+    "Compensation": {
+      "Min Salary": null,
+      "Max Salary": null
+    },
+    "Overview": "The role involves building and maintaining the landing page rendering platform at Canva, focusing on creating scalable web components and collaborating with various teams to enhance the developer experience.",
+    "Responsibilities": [
+      "Build components and frameworks for rapid and reliable web page management.",
+      "Collaborate with leads, product managers, and engineers to develop appropriate solutions.",
+      "Facilitate knowledge sharing and advocate for best practices.",
+      "Set up observability and monitoring capabilities for platform health.",
+      "Identify and address performance bottlenecks."
+    ],
+    "Requirements": {
+      "Skills": [
+        "Typescript",
+        "React",
+        "MobX",
+        "Webpack",
+        "NodeJS",
+        "NextJS",
+        "GraphQL"
+      ],
+      "Experience": {
+        "Years_min": 3,
+        "Level": "mid"
+      },
+      "Qualifications": [
+        "Commercial experience in a software development environment.",
+        "Experience developing rich web applications.",
+        "Firm understanding of web front-end tooling and performance optimization.",
+        "Understanding of server-side rendering technologies and patterns.",
+        "Grounded knowledge in computer science fundamentals."
+      ]
+    },
+    "job_id": "4262234890"
+  },
+  {
+    "Job Information": {
+      "Job Title": ".Net Software Engineer",
+      "Job Level": "Mid-level",
+      "Work Type": "Hybrid"
+    },
+    "Compensation": {
+      "Min Salary": null,
+      "Max Salary": null
+    },
+    "Overview": "The .Net Software Engineer will participate in the Software Development Lifecycle to enhance and maintain enterprise applications using C#. The role involves developing automated application build and deployment scripts and working within Agile teams.",
+    "Responsibilities": [
+      "Enhance and maintain enterprise applications using C#.",
+      "Develop automated application build and deployment scripts using .NET Core.",
+      "Liaise with technical and business staff to resolve issues across production systems.",
+      "Provide detailed technical analysis, documentation, and reporting.",
+      "Support election preparation activities and additional responsibilities as directed."
+    ],
+    "Requirements": {
+      "Skills": [
+        "C#",
+        ".NET Core",
+        "Visual Studio",
+        "Web API",
+        "SQL",
+        "Azure DevOps",
+        "Blazor",
+        "MS Suite",
+        "Miro"
+      ],
+      "Experience": {
+        "years_min": 3,
+        "level": "mid"
+      },
+      "Qualifications": [
+        "Demonstrated experience with Agile methodologies and the full Software Development Lifecycle (SDLC)",
+        "Tertiary qualifications or certifications in IT, Computer Science, or a related discipline (desirable)",
+        "Knowledge of Australian electoral law and practices (desirable)",
+        "Experience in Microsoft Azure and cloud technologies (desirable)",
+        "Experience in designing and implementing end-to-end integration solutions (desirable)",
+        "Australian citizenship with the ability to obtain Negative Vetting Level 1 (NV1) clearance"
+      ]
+    },
+    "job_id": "4275620123"
+  },
+  {
+    "Job Information": {
+      "Job Title": "Senior Backend Software Engineer",
+      "Job Level": "Senior",
+      "Work Type": "Hybrid"
+    },
+    "Compensation": {
+      "Min Salary": null,
+      "Max Salary": null
+    },
+    "Overview": "As a Senior Backend Software Engineer, you will lead technical initiatives, improve the developer experience at the edge, and influence platform direction while mentoring teammates and contributing to cross-team initiatives.",
+    "Responsibilities": [
+      "Design and implement core components of the edge platform, including worker frameworks and infrastructure automation.",
+      "Lead initiatives to improve system reliability, performance, and security.",
+      "Collaborate across teams to define high-impact solutions.",
+      "Investigate and resolve complex operational incidents.",
+      "Contribute to the team’s technical strategy and roadmap."
+    ],
+    "Requirements": {
+      "Skills": [
+        "JavaScript",
+        "TypeScript",
+        "Python",
+        "Java",
+        "Terraform",
+        "CI/CD",
+        "observability",
+        "security",
+        "DNS",
+        "Firewall",
+        "Security",
+        "Load Balancing",
+        "CDN",
+        "Edge Computing",
+        "Cloudflare",
+        "Fastly",
+        "Akamai"
+      ],
+      "Experience": {
+        "Years_min": 5,
+        "Level": "senior"
+      },
+      "Qualifications": [
+        "Hands-on experience with at least one major edge provider such as Cloudflare, Fastly, or Akamai.",
+        "Experience building and managing Cloudflare Workers or similar edge runtime environments.",
+        "Experience improving operational health and reducing tech debt."
+      ]
+    },
+    "job_id": "4262240216"
+  },
+  {
+    "Job Information": {
+      "Job Title": "Head of Engineering",
+      "Job Level": "Lead",
+      "Work Type": "On-site"
+    },
+    "Compensation": {
+      "Min Salary": null,
+      "Max Salary": null
+    },
+    "Overview": "The Head of Engineering will lead a team of engineers and testers to execute the product roadmap, driving customer and business value while fostering a high-performing engineering culture.",
+    "Responsibilities": [
+      "Foster a high-performing engineering culture rooted in delivery ownership and technical excellence.",
+      "Lead change across architecture, tools, and practices with empathy and clarity.",
+      "Transform, modernise, and scale the technology stack to enhance the company's position in the financial services sector.",
+      "Strengthen engineering governance focusing on quality, documentation, testing, and reusable frameworks.",
+      "Collaborate with senior leaders to align technical strategies with business and product objectives."
+    ],
+    "Requirements": {
+      "Skills": [
+        "Azure",
+        "AWS",
+        "GCC",
+        "secure SDLC",
+        "InfoSec practices",
+        "AI/ML integration",
+        ".Net development"
+      ],
+      "Experience": {
+        "years_min": 5,
+        "level": "senior"
+      },
+      "Qualifications": [
+        "Proven leadership capabilities as a software engineer",
+        "Experience in scaling teams and managing engineering processes",
+        "Strong understanding of distributed platforms and SaaS/data infrastructure"
+      ]
+    },
+    "job_id": "4272742656"
+  },
+  {
+    "Job Information": {
+      "job_title": "Optical Network Development Engineer",
+      "job_level": "Mid-level",
+      "work_type": "On-site"
+    },
+    "Compensation": {
+      "min_salary": null,
+      "max_salary": null
+    },
+    "Overview": "The Optical Network Development Engineer is responsible for building, deploying, and scaling Amazon networks that support AWS and its customers across multiple global data centers, ensuring efficiency, performance, and reliability.",
+    "Responsibilities": [
+      "Perform high quality network and/or systems operations, deployments, scaling, and technology refresh.",
+      "Collaborate with vendors/manufacturers to evaluate new hardware and software features and create implementation plans.",
+      "Automate optical test plans and qualify optical modules.",
+      "Work with network operations team to identify operational issues and improve quality processes.",
+      "Own long-term strategic views and build strong partnerships with customers to understand their needs."
+    ],
+    "Requirements": {
+      "Skills": [
+        "optical communication systems",
+        "networking planning",
+        "optimization",
+        "optical DWDM networks",
+        "Python",
+        "scripting"
+      ],
+      "Experience": {
+        "years_min": 1,
+        "level": "junior"
+      },
+      "Qualifications": [
+        "1+ years of work experience on optical communication systems",
+        "1+ years of work experience on operating and maintaining optical DWDM networks",
+        "1+ years of professional development experience with Python or a similar scripting language"
+      ]
+    },
+    "job_id": "4250265954"
+  },
+  {
+    "Job Information": {
+      "Job Title": "Senior Data Scientist",
+      "Job Level": "Senior",
+      "Work Type": "Hybrid"
+    },
+    "Compensation": {
+      "Min Salary": null,
+      "Max Salary": null
+    },
+    "Overview": "The Senior Data Scientist at Optus will lead the delivery of advanced scientific data models and analytics to support credit decisions and fraud risk management, ensuring efficient customer onboarding and retention.",
+    "Responsibilities": [
+      "Lead delivery of advanced scientific data models and analytics across Optus Group.",
+      "Develop and maintain credit scorecards and fraud detection models.",
+      "Plan and supervise key priorities for Group Credit and Finance.",
+      "Translate complex analysis into easily understood concepts for business partners.",
+      "Partner with senior stakeholders to improve financial performance."
+    ],
+    "Requirements": {
+      "Skills": [
+        "Databricks",
+        "SQL",
+        "Python",
+        "R",
+        "scikit-learn",
+        "TensorFlow",
+        "XGBoost"
+      ],
+      "Experience": {
+        "Years_Min": 3,
+        "Level": "Senior"
+      },
+      "Qualifications": [
+        "Experience in Finance/Data Science role with specialization in data modeling.",
+        "Proven experience in developing credit risk evaluation models or fraud prevention models.",
+        "Ability to lead development and deployment of machine learning models.",
+        "Experience with model risk management frameworks.",
+        "BA/BS degree in Computer Science, Statistics, Mathematics, Engineering, Analytics, or equivalent applied quantitative field."
+      ]
+    },
+    "job_id": "4224569488"
+  },
+  {
+    "Job Information": {
+      "Job Title": ".Net Software Engineer",
+      "Job Level": "Mid-level",
+      "Work Type": "Hybrid"
+    },
+    "Compensation": {
+      "Min Salary": null,
+      "Max Salary": null
+    },
+    "Overview": "The .Net Software Engineer will participate in the Software Development Lifecycle to enhance and maintain enterprise applications using C#. The role involves developing automated build and deployment scripts and working within Agile teams.",
+    "Responsibilities": [
+      "Enhance and maintain enterprise applications using C#.",
+      "Develop automated application build and deployment scripts using .NET Core.",
+      "Liaise with technical and business staff to resolve issues across production systems.",
+      "Provide detailed technical analysis, documentation, and reporting.",
+      "Support election preparation activities and additional responsibilities as directed."
+    ],
+    "Requirements": {
+      "Skills": [
+        "C#",
+        ".NET Core",
+        "Visual Studio",
+        "Web API",
+        "SQL",
+        "Azure DevOps",
+        "Blazor",
+        "MS Suite",
+        "Miro"
+      ],
+      "Experience": {
+        "years_min": 3,
+        "level": "mid"
+      },
+      "Qualifications": [
+        "Demonstrated experience with Agile methodologies and the full Software Development Lifecycle.",
+        "Tertiary qualifications or certifications in IT, Computer Science, or a related discipline.",
+        "Knowledge of Australian electoral law and practices is desirable.",
+        "Experience in Microsoft Azure and cloud technologies."
+      ]
+    },
+    "job_id": "4275613423"
+  },
+  {
+    "Job Information": {
+      "Job Title": "AuScope EarthBank Fellow",
+      "Job Level": "Mid-level",
+      "Work Type": "On-site"
+    },
+    "Compensation": {
+      "Min Salary": 118308,
+      "Max Salary": 140147
+    },
+    "Overview": "The AuScope EarthBank Fellow will lead a data-driven research project focused on critical mineral formation across Australia, utilizing archival materials and contributing to the development of a national digital platform for geochemical data.",
+    "Responsibilities": [
+      "Lead a data-driven research project integrating critical minerals datasets into EarthBank.",
+      "Enhance EarthBank’s infrastructure for sophisticated analyses of critical mineral systems.",
+      "Develop and implement data models following FAIR data management guidelines.",
+      "Collaborate with national and international partners across various sectors.",
+      "Mentor student interns and contribute to community engagement."
+    ],
+    "Requirements": {
+      "Skills": [
+        "Geochemistry",
+        "Economic geology",
+        "Data science",
+        "Scientific programming",
+        "Python",
+        "Data science techniques",
+        "Machine learning techniques",
+        "Geochemical analytical techniques"
+      ],
+      "Experience": {
+        "Years_min": 3,
+        "Level": "Mid"
+      },
+      "Qualifications": [
+        "PhD or near completion in geochemistry, geology, data science or related discipline",
+        "Knowledge or strong interest in critical mineral systems and geochemistry",
+        "Experience in managing, analysing, and interpreting large scientific datasets",
+        "Strong publication track record and evidence of successful collaborative research"
+      ]
+    },
+    "job_id": "4262494688"
+  },
+  {
+    "Job Information": {
+      "job_title": "Senior Machine Learning Operations (MLOps) Engineer",
+      "job_level": "Senior",
+      "work_type": "On-site"
+    },
+    "Compensation": {
+      "min_salary": null,
+      "max_salary": null
+    },
+    "Overview": "The Senior MLOps Engineer will enhance machine learning operations by delivering robust, scalable AWS cloud infrastructure and automation solutions, directly impacting millions of users across global platforms.",
+    "Responsibilities": [
+      "Lead the design, implementation, and maintenance of end-to-end ML infrastructure and automation solutions.",
+      "Drive cloud infrastructure and architectural decisions supporting large-scale ML workloads using Infrastructure as Code.",
+      "Implement and maintain CI/CD pipelines for efficient model integration and continuous delivery.",
+      "Build and optimize monitoring, alerting, and logging for model reliability and performance.",
+      "Collaborate with data scientists and stakeholders to identify infrastructure needs and streamline workflows."
+    ],
+    "Requirements": {
+      "Skills": [
+        "Terraform",
+        "AWS",
+        "Azure",
+        "GCP",
+        "CI/CD",
+        "Docker",
+        "Kubernetes",
+        "Python"
+      ],
+      "Experience": {
+        "years_min": 5,
+        "level": "senior"
+      },
+      "Qualifications": [
+        "Bachelor’s degree in Computer Science, Engineering, or a related technical field.",
+        "5+ years of experience in MLOps, DevOps, Data Engineering or cloud infrastructure roles."
+      ]
+    },
+    "job_id": "4219975145"
+  },
+  {
+    "Job Information": {
+      "Job Title": "Reliability Engineer",
+      "Job Level": "Senior",
+      "Work Type": "Hybrid"
+    },
+    "Compensation": {
+      "Min Salary": null,
+      "Max Salary": null
+    },
+    "Overview": "The Reliability Engineer will focus on designing and implementing processes, tools, and automation to improve the reliability of services at Canva, fostering a culture of reliability within the engineering organization.",
+    "Responsibilities": [
+      "Design and implement processes, tools, and automation for service reliability.",
+      "Work with product engineering teams to ensure reliability best practices are adopted.",
+      "Foster a culture of reliability by establishing processes and policies.",
+      "Conduct deep investigations into production incidents and apply learnings.",
+      "Participate in design meetings, hiring interviews, and code reviews."
+    ],
+    "Requirements": {
+      "Skills": [
+        "Python",
+        "Java",
+        "GoLang",
+        "Object Oriented Programming",
+        "Observability principles",
+        "Microservice architectures",
+        "AWS",
+        "Terraform",
+        "Snowflake",
+        "Mode Analytics",
+        "Looker"
+      ],
+      "Experience": {
+        "Years_Min": 5,
+        "Level": "Senior"
+      },
+      "Qualifications": [
+        "Advanced coding proficiency in Python, Java, or GoLang.",
+        "Experience developing complex distributed web applications.",
+        "Solid understanding of observability principles.",
+        "Experience guiding others in incident review and investigation.",
+        "Disciplined coding practices and experience with code reviews."
+      ]
+    },
+    "job_id": "4262238503"
+  }
+]
