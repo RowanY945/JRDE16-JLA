@@ -127,8 +127,8 @@ def process_job(job: Dict, api2: Linkedin) -> Dict:
             "description": job_details.get('description', {}).get('text', "N/A"),
             "job_url": job_url,
             "reposted": job.get('repostedJob', False),
-            "posted_time": listed_at_epoch,
-            "expire_time": expire_at_epoch,
+            "posted_time": datetime.fromtimestamp(listed_at_epoch/ 1000.0, tz=timezone.utc),
+            "expire_time": datetime.fromtimestamp(expire_at_epoch/ 1000.0, tz=timezone.utc),
             "apply_url": apply_url
         }
 

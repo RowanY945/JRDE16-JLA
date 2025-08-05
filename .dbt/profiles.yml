@@ -1,0 +1,22 @@
+jra_dbt:
+  outputs:
+    dev:
+      catalog: workspace
+      host: dbc-b7d27b91-6118.cloud.databricks.com
+      http_path: /sql/1.0/warehouses/07a6a6716be25500
+      schema: default
+      threads: 1
+      token: dapi8e10543953c254e6b6d2d769ae1f3d89
+      type: databricks
+  target: dev
+jra_dbt:
+  outputs:
+    dev:
+      catalog: jra
+      host: https://dbc-e8afd837-2b61.cloud.databricks.com
+      http_path: https://dbc-e8afd837-2b61.cloud.databricks.com
+      schema: initial
+      threads: 1
+      token: "dapi8e10543953c254e6b6d2d769ae1f3d89"
+      type: databricks
+  target: dev
