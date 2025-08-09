@@ -11,4 +11,6 @@ sources:
     database: demo  
     schema: demo_schema      # Matches schema in profiles.yml
     tables:
-      - name: stg_linkedin_external
+      - name: linkedin_jobs
+      - name: jobs_linkedin_cleaned
+  
