@@ -1,7 +1,7 @@
 {{ 
     config(
-        materialized='table',
-        file_format='parquet',
+        materialized='view',
+        file_format='delta',
         location_root='s3://jla-data-silver/'
     ) 
 }}
