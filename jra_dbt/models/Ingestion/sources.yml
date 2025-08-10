@@ -1,12 +1,7 @@
 version: 2
 
 sources:
-  - name: linkedin_raw
-    tables:
-      - name: linkedin_external
-        external:
-          location: 's3://jla-raw-datalake/raw/linkedin/'
-          file_format: parquet
+ 
   - name: linkedin_ingestion
     database: demo  
     schema: demo_schema      # Matches schema in profiles.yml

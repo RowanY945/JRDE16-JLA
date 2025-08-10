@@ -8,5 +8,5 @@
 
 
 
-SELECT DISTINCT  job_posting_id, job_summary
+SELECT job_posting_id, job_summary
 FROM {{ source('linkedin_ingestion', 'jobs_linkedin_cleaned') }} AS sr
