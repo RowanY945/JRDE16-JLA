@@ -1,0 +1,28 @@
+version: 2
+
+sources:
+  - name: linkedin_raw
+    description: "Raw LinkedIn data from S3"
+    tables:
+      - name: linkedin_external
+        description: "Raw LinkedIn job postings in Parquet format"
+        meta:
+          location: 's3://jla-raw-datalake/raw/linkedin/'
+          file_format: parquet
+          # This is just documentation - not functional
+
+    # BRONZE LAYER - Your outputs that become sources for next layer
+  - name: bronze_layer
+    description: "Bronze layer - lightly transformed data"
+    database: demo  
+    schema: demo_schema  # Separate schema for bronze
+    tables:
+      - name: stg_test2
+        description: "Bronze Layer"
+
+  - name: silver_layer
+    database: demo  
+    schema: demo_schema
+    tables:
+      - name: stg_cleaned_test
+        description: "Cleaned LinkedIn jobs with standardized schema"
