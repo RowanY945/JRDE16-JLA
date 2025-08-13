@@ -8,13 +8,15 @@
     ) 
 }}
 
-
-SELECT job_posting_id, job_summary
-FROM {{ source('linkedin_ingestion', 'jobs_linkedin_cleaned') }} AS sr
+SELECT 
+    
+    job_posting_id, job_summary,scraped_dts
+    
+FROM {{ source('silver_layer', 'stg_cleaned_test') }}
 
 {% if is_incremental() %}
-    WHERE ingest_dts > (
-        SELECT COALESCE(MAX(ingest_dts), '1900-01-01'::timestamp)
+    WHERE scraped_dts > (
+        SELECT COALESCE(MAX(scraped_dts), '1900-01-01'::timestamp)
         FROM {{ this }}
     )
 {% endif %}
