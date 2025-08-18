@@ -14,7 +14,7 @@ sources:
   - name: Indeed_raw
     description: "Raw LinkedIn data from S3"
     tables:
-      - name: linkedin_external
+      - name: indeed_external
         description: "Raw LinkedIn job postings in Parquet format"
         meta:
           location: 's3://jla-raw-datalake/raw/Indeed/'

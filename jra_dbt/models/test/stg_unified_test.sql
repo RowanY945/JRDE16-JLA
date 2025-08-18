@@ -8,30 +8,63 @@
     ) 
 }}
 
-SELECT 
-    url, 
-    job_posting_id, 
-    job_title, 
-    company_name, 
-    job_location,
-    job_seniority_level, 
-    job_function, 
-    job_employment_type, 
-    job_industries,
-    min_salary,
-    max_salary,
-    job_posted_date,
-    scraped_dts, 
-    ingest_dts,
-    _rescued_data,
-    is_enriched,
-    job_source,
-    is_active
-FROM {{ source('silver_layer', 'stg_cleaned_test') }}
+-- 第 1 步：将 UNION ALL 的逻辑放到一个 CTE (Common Table Expression) 中
+with source_unioned as (
 
+    SELECT 
+        url, 
+        job_posting_id, 
+        job_title, 
+        company_name, 
+        job_location,
+        job_seniority_level, 
+        job_function, 
+        job_employment_type, 
+        job_industries,
+        min_salary,
+        max_salary,
+        job_posted_date,
+        scraped_dts, 
+        ingest_dts,
+        _rescued_data,
+        is_enriched,
+        job_source,
+        is_active
+    FROM {{ source('silver_layer', 'stg_cleaned_test') }}
+
+    UNION ALL
+
+    SELECT 
+        url, 
+        job_posting_id, 
+        job_title, 
+        company_name, 
+        job_location,
+        job_seniority_level, 
+        job_function, 
+        job_employment_type, 
+        job_industries,
+        min_salary,
+        max_salary,
+        job_posted_date,
+        scraped_dts, 
+        ingest_dts,
+        _rescued_data,
+        is_enriched,
+        job_source,
+        is_active
+    FROM {{ source('silver_layer', 'indeed_cleaned') }}
+
+)
+
+
+SELECT * FROM source_unioned
+
+-- 第 3 步：添加增量加载的过滤条件
 {% if is_incremental() %}
-    WHERE ingest_dts > (
-        SELECT COALESCE(MAX(ingest_dts), '1900-01-01'::timestamp)
-        FROM {{ this }}
-    )
+
+  -- 这个 WHERE 条件只会在增量运行时被应用
+  -- 它会从合并后的数据中，只选择 ingest_dts 大于目标表中已存在的最大 ingest_dts 的记录
+  WHERE ingest_dts > (SELECT max(ingest_dts) FROM {{ this }})
+
 {% endif %}

@@ -14,7 +14,8 @@ SELECT
     
 FROM {{ source('silver_layer', 'stg_cleaned_test') }}
 
-Union all
+UNION ALL 
+
 SELECT 
     
     job_posting_id, job_summary,scraped_dts
