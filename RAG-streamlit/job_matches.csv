@@ -1,0 +1,11 @@
+rank,job_posting_id,similarity_score,skill_match_percentage,matching_skills,missing_skills,total_required_skills
+1,4270859335,0.6655386,70.0,"Databricks, SQL, Cassandra, MongoDB, Kafka, Flink, Apache Spark","Spark, AWS S3, Google Cloud BigQuery",10
+2,4268506741,0.6008487,15.4,"SQL, Redshift","Java, Spring Boot, RESTful API, Python, Spark, Scala, AWS Glue, AWS Lambda, AWS Athena, Kinesis, EMR",13
+3,4273003803,0.5907538,9.1,ETL,"Data Engineering, Big Data, Data Warehousing, ClickHouse, Terradata, Typescript, Node, JVM, Dotnet, Rust",11
+4,4275616328,0.5644974,40.0,"AWS, SQL","Python, Bash, PowerShell",5
+5,4262240223,0.5440321,33.3,"Kubernetes, AWS, S3","Python, EKS, EC2, Lambda, DynamoDB, RDS",9
+6,4272728674,0.51623976,0.0,,"quantitative analysis, survey design, data analysis",3
+7,4272788050,0.51143885,25.0,SQL,"Python, Power BI, DAX",4
+8,4262242012,0.51094556,40.0,"AWS, GCP, Kubernetes, CI/CD","Go, Python, Java, Infrastructure as Code, Automation, Site Reliability",10
+9,4262240216,0.5091243,25.0,"Terraform, CI/CD","JavaScript, TypeScript, Python, Java, observability, security",8
+10,4242713114,0.5072602,0.0,,"Machine Learning, Deep Learning, Model Deployment, Feature Engineering, Data Processing",5
