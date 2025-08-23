@@ -199,12 +199,12 @@ jobs:
             echo "======================================================================"
             
             # 确认该函数的 Terraform 配置文件存在
-            if [ ! -d "IaC/Lambda/$FUNC_NAME" ]; then
-              echo "Error: Terraform configuration not found at 'IaC/Lambda/$FUNC_NAME'. Skipping."
+            if [ ! -d "terraform/$FUNC_NAME" ]; then
+              echo "Error: Terraform configuration not found at 'terraform/$FUNC_NAME'. Skipping."
               continue
             fi
             
-            cd "IaC/Lambda/$FUNC_NAME"
+            cd "terraform/$FUNC_NAME"
             
             echo "Initializing Terraform..."
             terraform init -reconfigure # 使用 -reconfigure 保证环境干净
