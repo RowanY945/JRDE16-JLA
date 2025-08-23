@@ -123,7 +123,9 @@ jobs:
         uses: tj-actions/changed-files@v44 # 建议使用最新版本
         with:
           # 监控存放 Lambda .zip 部署包的目录
-          files: scripts/lambda/**
+          files: |
+              terraform/terraform_create_Natgateway/package.zip
+              terraform/terraform_delete_Natgateway/package.zip
 
       - name: Process, Upload, and Set changed_functions variable
         id: process-and-upload
