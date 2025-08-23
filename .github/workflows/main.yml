@@ -103,7 +103,7 @@ jobs:
         run: |
           terraform init
           terraform apply -auto-approve
-  deploy-lambda-on-hash-change:
+  deploy-lambda-on-hash-change_version:
     name: Smart Deploy Lambda on Code Change
     runs-on: ubuntu-latest
     
