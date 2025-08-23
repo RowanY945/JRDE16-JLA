@@ -7,12 +7,12 @@ variable "region" {
 variable "function_name_create" {
   description = "Databricks-Natgateway-elasticIP-Create"
   type        = string
-  default="Databricks-Natgateway-elasticIP-Create"
+  default="Databricks-Natgateway-elasticIP-Create-CICD"
 }
 variable "function_name_delete" {
   description = "Databricks-Natgateway-elasticIP-delete"
   type        = string
-  default= "Databricks-Natgateway-elasticIP-delete"
+  default= "Databricks-Natgateway-elasticIP-delete-CICD"
 }
 
 
