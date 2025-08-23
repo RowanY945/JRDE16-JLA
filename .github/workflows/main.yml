@@ -103,3 +103,136 @@ jobs:
         run: |
           terraform init
           terraform apply -auto-approve
+  deploy-lambda-on-hash-change:
+    name: Smart Deploy Lambda on Code Change
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials via OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: "arn:aws:iam::069717477771:role/JLA-GitHubOIDCRole"
+          role-session-name: GitHubActions-LambdaHashDeploy-${{ github.run_id }}
+          aws-region: "ap-southeast-2"
+
+      - name: Get changed files in the lambda scripts directory
+        id: changed-files
+        uses: tj-actions/changed-files@v44 # 建议使用最新版本
+        with:
+          # 监控存放 Lambda .zip 部署包的目录
+          files: scripts/lambda/**
+
+      - name: Process, Upload, and Set changed_functions variable
+        id: process-and-upload
+        # 只有当上一步检测到文件变动时才运行
+        if: steps.changed-files.outputs.all_changed_files != ''
+        run: |
+          # 定义您的 S3 存储桶名称
+          LAMBDA_SCRIPTS_BUCKET="jla-lambda-scripts"
+          
+          # 创建一个数组，用于存放代码内容真正被修改了的函数名
+          declare -a FUNCTIONS_TO_DEPLOY=()
+          
+          echo "Detected changes in the following files: ${{ steps.changed-files.outputs.all_changed_files }}"
+
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            # 我们只关心 .zip 部署包
+            if [[ $file != *.zip ]]; then
+              echo "Skipping non-zip file: $file"
+              continue
+            fi
+            
+            FILENAME=$(basename $file)
+            FUNC_NAME=$(basename $file .zip)
+            
+            # 1. 计算本地新 .zip 文件的 SHA256 哈希值
+            LOCAL_HASH=$(sha256sum $file | cut -d ' ' -f1)
+            echo "[$FUNC_NAME] Calculated local hash for $FILENAME: $LOCAL_HASH"
+            
+            # 2. 从 S3 上获取当前存储的 .zip 文件的哈希值 (该值存在 Metadata 中)
+            # 如果对象不存在或没有元数据，命令会返回 "none"
+            S3_HASH=$(aws s3api head-object \
+              --bucket $LAMBDA_SCRIPTS_BUCKET \
+              --key lambda/$FUNC_NAME/$FILENAME \
+              --query 'Metadata.sha256' \
+              --output text 2>/dev/null || echo "none")
+            echo "[$FUNC_NAME] Current S3 hash for $FILENAME: $S3_HASH"
+            
+            # 3. 比较哈希值。如果不同，则上传新版本
+            if [ "$LOCAL_HASH" != "$S3_HASH" ]; then
+              echo "[$FUNC_NAME] Hashes do not match. Changes detected, uploading to S3..."
+              aws s3 cp $file s3://${LAMBDA_SCRIPTS_BUCKET}/lambda/$FUNC_NAME/$FILENAME \
+                --metadata sha256=$LOCAL_HASH
+              echo "[$FUNC_NAME] Successfully uploaded $FILENAME to s3://${LAMBDA_SCRIPTS_BUCKET}"
+              
+              # 将确认需要部署的函数名添加到数组中
+              FUNCTIONS_TO_DEPLOY+=("$FUNC_NAME")
+            else
+              echo "[$FUNC_NAME] Hashes match. No changes detected for $FILENAME, skipping upload."
+            fi
+          done
+          
+          # 4. 将需要部署的函数名列表转换为一个空格分隔的字符串，并设置为环境变量
+          # 供后续的 Terraform 步骤使用
+          echo "The following functions will be deployed: ${FUNCTIONS_TO_DEPLOY[*]}"
+          echo "changed_functions=${FUNCTIONS_TO_DEPLOY[*]}" >> $GITHUB_ENV
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Run Terraform for changed functions
+        # 只有当 changed_functions 环境变量不为空时才运行
+        if: env.changed_functions != ''
+        timeout-minutes: 15
+        run: |
+          # 定义您的 S3 存储桶名称
+          TERRAFORM_PLANS_BUCKET="jla-execution-plan"
+
+          for FUNC_NAME in ${{ env.changed_functions }}; do
+            echo "======================================================================"
+            echo "Processing Terraform for function: $FUNC_NAME"
+            echo "======================================================================"
+            
+            # 确认该函数的 Terraform 配置文件存在
+            if [ ! -d "IaC/Lambda/$FUNC_NAME" ]; then
+              echo "Error: Terraform configuration not found at 'IaC/Lambda/$FUNC_NAME'. Skipping."
+              continue
+            fi
+            
+            cd "IaC/Lambda/$FUNC_NAME"
+            
+            echo "Initializing Terraform..."
+            terraform init -reconfigure # 使用 -reconfigure 保证环境干净
+            
+            # 导入已存在的资源，确保 Terraform 状态和云端同步
+            if aws lambda get-function --function-name $FUNC_NAME >/dev/null 2>&1; then
+              echo "Importing existing Lambda function..."
+              terraform import aws_lambda_function.$FUNC_NAME $FUNC_NAME || true
+            fi
+            if aws logs describe-log-groups --log-group-name-prefix "/aws/lambda/$FUNC_NAME" --query "length(logGroups[?logGroupName=='/aws/lambda/${FUNC_NAME}'])" --output text | grep -q "1"; then
+              echo "Importing existing CloudWatch log group..."
+              terraform import aws_cloudwatch_log_group.lambda_log_group "/aws/lambda/$FUNC_NAME" || true
+            fi
+            
+            echo "Planning changes and uploading plan to S3..."
+            TIMESTAMP=$(date +%Y%m%d%H%M%S)
+            PLAN_FILE="tfplan-$FUNC_NAME"
+            
+            terraform plan -out=$PLAN_FILE
+            
+            # 将执行计划上传到您指定的 S3 存储桶，用于审计
+            aws s3 cp $PLAN_FILE s3://${TERRAFORM_PLANS_BUCKET}/lambda/tfplan-$FUNC_NAME-${TIMESTAMP}
+            
+            echo "Applying Terraform configuration..."
+            terraform apply -auto-approve $PLAN_FILE
+            
+            rm -f $PLAN_FILE
+            rm -rf .terraform .terraform.lock.hcl
+            
+            cd ../../../
+            echo "Completed deployment for $FUNC_NAME"
+          done
+
