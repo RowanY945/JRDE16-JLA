@@ -22,6 +22,10 @@ jobs:
     # Just update the deployment timestamp in the JavaScript file
     - name: Update deployment timestamp
       run: |
+        # 使用 mkdir -p 确保 js 目录存在，如果已存在则什么也不做
+        mkdir -p js
+        
+        # 现在可以安全地向文件写入内容
         echo "// Updating timestamp for deployment on $(date)" >> js/script.js
         echo "// Deployment ID: ${{ github.run_id }}" >> js/script.js
 
@@ -45,7 +49,7 @@ jobs:
     steps:
       - run: echo "Planning..."
 
-  terraform-create:
+  terraform-createlambda:
     name: 'Terraform Apply to create'
     # 仅当代码推送到 main 分支时，才对 dev 环境运行 apply
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
@@ -66,7 +70,7 @@ jobs:
           terraform apply -auto-approve
 
 
-  terraform-delete:
+  terraform-deletelambda:
     name: 'Terraform Apply to delete'
     # 仅当代码推送到 main 分支时运行
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
