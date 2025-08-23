@@ -22,9 +22,9 @@ SELECT
 
     job_industries,
     
-    try_cast(NULLIF(TRIM(MIN_AMOUNT),' ') AS int) as min_salary, 
-    try_cast(NULLIF(TRIM(MAX_AMOUNT),' ') AS int) as max_salary, 
-    date_format(to_date(job_posted_date, 'yyyy-MM-dd\'T\'HH:mm:ss.SSS\'Z\''), 'yyyy-MM-dd') AS job_posted_date, 
+    MIN_AMOUNT as min_salary, 
+    MAX_AMOUNT as max_salary, 
+    date_format(to_date(cast(job_posted_date As timestamp), 'yyyy-MM-dd\'T\'HH:mm:ss.SSS\'Z\''), 'yyyy-MM-dd') AS job_posted_date, 
     timestamp AS scraped_dts, 
     ingest_dts,
     _rescued_data,
