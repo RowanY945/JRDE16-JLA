@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 variable "region" {
   description = "AWS region"
   type        = string
@@ -60,8 +60,7 @@ variable "environment_variables" {
   type        = map(string)
   default     = {}
 }
-||||||| 1d37792
-=======
+
 variable "region" {
   description = "AWS region"
   type        = string
