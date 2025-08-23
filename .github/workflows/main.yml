@@ -2,7 +2,7 @@ name: Deploy Static Website to S3
 
 on:
   push:
-    branches: [ george ]
+    branches: [ main ]
   workflow_dispatch:  # Allows manual triggering
 
 # OIDC permissions for keyless authentication
