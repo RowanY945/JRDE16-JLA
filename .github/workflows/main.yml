@@ -44,7 +44,7 @@ jobs:
   terraform-create:
     name: 'Terraform Apply to create'
     # 仅当代码推送到 main 分支时，才对 dev 环境运行 apply
-    if: github.ref == 'refs/heads/george' && github.event_name == 'push'
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
     needs: terraform-plan # 依赖 plan 任务（虽然在 push 事件中 plan 不会运行，但这是好的实践）
 
@@ -64,8 +64,8 @@ jobs:
 
   terraform-delete:
     name: 'Terraform Apply to delete'
-    # 仅当代码推送到 george 分支时运行
-    if: github.ref == 'refs/heads/george' && github.event_name == 'push'
+    # 仅当代码推送到 main 分支时运行
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
 
 
