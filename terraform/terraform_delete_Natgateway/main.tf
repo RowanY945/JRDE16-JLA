@@ -11,7 +11,7 @@ data "aws_iam_role" "existing_role" {
 
 # Step 3: Update the Lambda function to use the ARN from the data source.
 resource "aws_lambda_function" "demo" {
-  function_name = var.function_name_Delete
+  function_name = var.function_name_create
   # This line now points to the ARN of the existing role we found above.
   role          = data.aws_iam_role.existing_role.arn
   
