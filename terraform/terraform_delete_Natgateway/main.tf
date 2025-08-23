@@ -1,4 +1,6 @@
-<<<<<<< HEAD
+provider "aws" {
+  region = "ap-southeast-2"  
+}
 # Step 1: Add a "data" source to look up the existing IAM role.
 # This tells Terraform to find the role named "Databricks_NAT_Lambda" in your AWS account.
 data "aws_iam_role" "existing_role" {
@@ -31,8 +33,7 @@ resource "aws_lambda_function" "demo" {
 output "lambda_name" {
   value = aws_lambda_function.demo.function_name
 }
-||||||| 1d37792
-=======
+
 # Step 1: Add a "data" source to look up the existing IAM role.
 # This tells Terraform to find the role named "Databricks_NAT_Lambda" in your AWS account.
 data "aws_iam_role" "existing_role" {
@@ -65,4 +66,4 @@ resource "aws_lambda_function" "demo" {
 output "lambda_name" {
   value = aws_lambda_function.demo.function_name
 }
->>>>>>> 27dc2eb88286d4d1e425f957b4627d62bfb0cce6
+

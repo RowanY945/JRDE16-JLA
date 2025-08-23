@@ -1,3 +1,7 @@
+
+provider "aws" {
+  region = "ap-southeast-2"  # 请替换成您想要部署资源的区域
+}
 # Step 1: Add a "data" source to look up the existing IAM role.
 # This tells Terraform to find the role named "Databricks_NAT_Lambda" in your AWS account.
 data "aws_iam_role" "existing_role" {
