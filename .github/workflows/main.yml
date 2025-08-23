@@ -50,7 +50,7 @@ jobs:
       - run: echo "Planning..."
 
   terraform-createlambda:
-    name: 'Terraform Apply to create'
+    name: 'Terraform Apply to create lambda'
     # 仅当代码推送到 main 分支时，才对 dev 环境运行 apply
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
@@ -71,7 +71,7 @@ jobs:
 
 
   terraform-deletelambda:
-    name: 'Terraform Apply to delete'
+    name: 'Terraform Apply to delete lambda'
     # 仅当代码推送到 main 分支时运行
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
