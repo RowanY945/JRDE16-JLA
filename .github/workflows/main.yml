@@ -40,6 +40,10 @@ jobs:
         role-to-assume: "arn:aws:iam::069717477771:role/JLA-GitHubOIDCRole"
         role-session-name: GitHubActions-Backend-${{ github.run_id }}
         aws-region: "ap-southeast-2"
+  terraform-plan:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Planning..."
 
   terraform-create:
     name: 'Terraform Apply to create'
