@@ -129,33 +129,31 @@ jobs:
 
       - name: Process, Upload, and Set changed_functions variable
         id: process-and-upload
-        # 只有当上一步检测到文件变动时才运行
         if: steps.changed-files.outputs.all_changed_files != ''
         run: |
-          # 定义您的 S3 存储桶名称
           LAMBDA_SCRIPTS_BUCKET="jla-lambda-scripts"
-          
-          # 创建一个数组，用于存放代码内容真正被修改了的函数名
           declare -a FUNCTIONS_TO_DEPLOY=()
           
           echo "Detected changes in the following files: ${{ steps.changed-files.outputs.all_changed_files }}"
 
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            # 我们只关心 .zip 部署包
             if [[ $file != *.zip ]]; then
               echo "Skipping non-zip file: $file"
               continue
             fi
             
             FILENAME=$(basename $file)
-            FUNC_NAME=$(basename $file .zip)
             
-            # 1. 计算本地新 .zip 文件的 SHA256 哈希值
+            # --- 这是修复的关键 ---
+            # 1. 获取文件所在的目录 (例如: terraform/terraform_delete_Natgateway)
+            DIR_PATH=$(dirname $file)
+            # 2. 从目录路径中提取最后一部分作为函数名 (例如: terraform_delete_Natgateway)
+            FUNC_NAME=$(basename $DIR_PATH)
+            # --- 修复结束 ---
+
             LOCAL_HASH=$(sha256sum $file | cut -d ' ' -f1)
             echo "[$FUNC_NAME] Calculated local hash for $FILENAME: $LOCAL_HASH"
             
-            # 2. 从 S3 上获取当前存储的 .zip 文件的哈希值 (该值存在 Metadata 中)
-            # 如果对象不存在或没有元数据，命令会返回 "none"
             S3_HASH=$(aws s3api head-object \
               --bucket $LAMBDA_SCRIPTS_BUCKET \
               --key lambda/$FUNC_NAME/$FILENAME \
@@ -163,25 +161,25 @@ jobs:
               --output text 2>/dev/null || echo "none")
             echo "[$FUNC_NAME] Current S3 hash for $FILENAME: $S3_HASH"
             
-            # 3. 比较哈希值。如果不同，则上传新版本
             if [ "$LOCAL_HASH" != "$S3_HASH" ]; then
               echo "[$FUNC_NAME] Hashes do not match. Changes detected, uploading to S3..."
               aws s3 cp $file s3://${LAMBDA_SCRIPTS_BUCKET}/lambda/$FUNC_NAME/$FILENAME \
                 --metadata sha256=$LOCAL_HASH
               echo "[$FUNC_NAME] Successfully uploaded $FILENAME to s3://${LAMBDA_SCRIPTS_BUCKET}"
               
-              # 将确认需要部署的函数名添加到数组中
-              FUNCTIONS_TO_DEPLOY+=("$FUNC_NAME")
+              # 使用 uniq 的方式确保函数名不重复添加
+              if [[ ! " ${FUNCTIONS_TO_DEPLOY[@]} " =~ " ${FUNC_NAME} " ]]; then
+                  FUNCTIONS_TO_DEPLOY+=("$FUNC_NAME")
+              fi
             else
               echo "[$FUNC_NAME] Hashes match. No changes detected for $FILENAME, skipping upload."
             fi
           done
           
-          # 4. 将需要部署的函数名列表转换为一个空格分隔的字符串，并设置为环境变量
-          # 供后续的 Terraform 步骤使用
-          echo "The following functions will be deployed: ${FUNCTIONS_TO_DEPLOY[*]}"
-          echo "changed_functions=${FUNCTIONS_TO_DEPLOY[*]}" >> $GITHUB_ENV
-
+          # 将数组转换为 GitHub Actions 能理解的字符串
+          DEPLOY_LIST=$(IFS=' '; echo "${FUNCTIONS_TO_DEPLOY[*]}")
+          echo "The following functions will be deployed: $DEPLOY_LIST"
+          echo "changed_functions=$DEPLOY_LIST" >> $GITHUB_ENV
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
 
