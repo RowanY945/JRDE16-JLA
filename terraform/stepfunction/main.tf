@@ -13,6 +13,7 @@ provider "aws" {
 }
 
 # Lambda function for Indeed job processing
+/*
 resource "aws_lambda_function" "indeed_job_processor" {
   function_name = "lambda-indeed-job-id"
   role         = "arn:aws:iam::${var.aws_account_id}:role/Scraper_lambda_function"
@@ -67,6 +68,8 @@ resource "aws_lambda_function" "linkedin_job_processor" {
     ManagedBy   = "Terraform"
   }
 }
+
+*/
 
 # Step Function for job processing workflow
 resource "aws_sfn_state_machine" "job_processor_workflow" {
