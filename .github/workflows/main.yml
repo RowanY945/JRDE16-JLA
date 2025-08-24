@@ -104,8 +104,8 @@ jobs:
           terraform init
           terraform apply -auto-approve
   
-terraform-indeed:
-    name: 'Terraform Apply to delete lambda'
+  terraform-indeed:
+    name: 'Terraform Apply indeed lambda'
     # 仅当代码推送到 main 分支时运行
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
@@ -130,8 +130,9 @@ terraform-indeed:
         run: |
           terraform init
           terraform apply -auto-approve
-terraform-linkedin:
-    name: 'Terraform Apply to delete lambda'
+          
+  terraform-linkedin:
+    name: 'Terraform Apply to linkedin lambda'
     # 仅当代码推送到 main 分支时运行
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
