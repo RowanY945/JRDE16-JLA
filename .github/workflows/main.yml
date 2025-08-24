@@ -130,7 +130,7 @@ jobs:
         run: |
           terraform init
           terraform apply -auto-approve
-          
+
   terraform-linkedin:
     name: 'Terraform Apply to linkedin lambda'
     # 仅当代码推送到 main 分支时运行
@@ -157,7 +157,7 @@ jobs:
         run: |
           terraform init
           terraform apply -auto-approve
-deploy-lambda-on-hash-change_version:
+  deploy-lambda-on-hash-change_version:
     name: Smart Deploy Lambda on Code Change
     runs-on: ubuntu-latest
     
