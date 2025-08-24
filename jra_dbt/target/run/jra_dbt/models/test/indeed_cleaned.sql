@@ -1,6 +1,6 @@
 
     
-  create or replace table `demo`.`demo_schema`.`indeed_cleaned`
+  create or replace table `demo`.`silver`.`indeed_cleaned`
   
   (
     

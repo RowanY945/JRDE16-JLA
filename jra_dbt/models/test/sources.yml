@@ -1,0 +1,46 @@
+version: 2
+
+sources:
+  - name: linkedin_raw
+    description: "Raw LinkedIn data from S3"
+    tables:
+      - name: linkedin_external
+        description: "Raw LinkedIn job postings in Parquet format"
+        meta:
+          location: 's3://jla-raw-datalake/raw/linkedin/'
+          file_format: parquet
+          # This is just documentation - not functional
+
+  - name: Indeed_raw
+    description: "Raw LinkedIn data from S3"
+    tables:
+      - name: indeed_external
+        description: "Raw LinkedIn job postings in Parquet format"
+        meta:
+          location: 's3://jla-raw-datalake/raw/Indeed/'
+          file_format: parquet
+          # This is just documentation - not functional
+
+    # BRONZE LAYER - Your outputs that become sources for next layer
+  - name: bronze_layer
+    description: "Bronze layer - lightly transformed data"
+    database: demo  
+    schema: bronze  # Separate schema for bronze
+    tables:
+      - name: indeed_jobs
+        description: "Bronze Layer for Indeed"
+      - name: linkedin_jobs
+        description: "Bronze Layer for Linkedin"
+
+  - name: silver_layer
+    database: demo  
+    schema: silver
+    tables:
+      - name: indeed_cleaned
+        description: "Cleaned Indeed jobs with standardized schema"
+      - name: linkedin_cleaned
+        description: "Cleaned LinkedIn jobs with standardized schema"
+      - name: jobs_description
+        description: "jobs description for both linkedin and indeed"
+      - name: jobs_unified
+        description: "all information except jobs description for both linkedin and indeed"

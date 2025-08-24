@@ -27,5 +27,5 @@ SELECT
     month(current_date()) as month,
     day(current_date()) as day
 
-FROM `demo`.`demo_schema`.`indeed_test`
+FROM `demo`.`bronze`.`indeed_jobs`
 
