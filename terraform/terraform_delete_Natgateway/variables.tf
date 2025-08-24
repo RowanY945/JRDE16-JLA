@@ -16,7 +16,17 @@ variable "function_name_delete" {
 }
 
 
+variable "function_name_linkedin" {
+  description = "jobsid_linkedin"
+  type        = string
+  default="linkedin_jobid"
+}
+variable "function_name_indeed" {
+  description = "jobsid_indeed"
+  type        = string
+  default="indeed_jobid"
 
+}
 
 variable "package_path"{
     description="the location of lambda code"

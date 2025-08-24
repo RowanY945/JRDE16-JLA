@@ -15,7 +15,6 @@ variable "function_name_delete" {
   default= "Databricks-Natgateway-elasticIP-delete-CICD"
 }
 
-
 variable "function_name_linkedin" {
   description = "jobsid_linkedin"
   type        = string

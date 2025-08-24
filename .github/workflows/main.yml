@@ -103,7 +103,60 @@ jobs:
         run: |
           terraform init
           terraform apply -auto-approve
-  deploy-lambda-on-hash-change_version:
+  
+terraform-indeed:
+    name: 'Terraform Apply to delete lambda'
+    # 仅当代码推送到 main 分支时运行
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Configure AWS credentials via OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+             role-to-assume: "arn:aws:iam::069717477771:role/JLA-GitHubOIDCRole"
+             role-session-name: GitHubActions-Backend-${{ github.run_id }}
+             aws-region: "ap-southeast-2"
+
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform Apply to delete
+        working-directory: ./terraform/indeed_jobid # 硬编码 prod 目录
+        run: |
+          terraform init
+          terraform apply -auto-approve
+terraform-linkedin:
+    name: 'Terraform Apply to delete lambda'
+    # 仅当代码推送到 main 分支时运行
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Configure AWS credentials via OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+             role-to-assume: "arn:aws:iam::069717477771:role/JLA-GitHubOIDCRole"
+             role-session-name: GitHubActions-Backend-${{ github.run_id }}
+             aws-region: "ap-southeast-2"
+
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform Apply to delete
+        working-directory: ./terraform/linkedin_jobid # 硬编码 prod 目录
+        run: |
+          terraform init
+          terraform apply -auto-approve
+deploy-lambda-on-hash-change_version:
     name: Smart Deploy Lambda on Code Change
     runs-on: ubuntu-latest
     
