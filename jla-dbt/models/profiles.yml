@@ -1,0 +1,39 @@
+# Databricks Environment Configurations
+# Bronze, Silver, and Gold tiers for data processing
+# All using the same catalog with different schemas
+
+bronze:
+  outputs:
+    dev:
+      catalog: demo
+      host: ########
+      http_path: #############
+      schema: bronze
+      threads: 1
+      token: #########################
+      type: databricks
+  target: dev
+
+silver:
+  outputs:
+    dev:
+      catalog: demo
+      host: ########
+      http_path: #############
+      schema: silver
+      threads: 1
+      token: #########################
+      type: databricks
+  target: dev
+
+gold:
+  outputs:
+    dev:
+      catalog: demo
+      host: ########
+      http_path: #############
+      schema: gold
+      threads: 1
+      token: #########################
+      type: databricks
+  target: dev

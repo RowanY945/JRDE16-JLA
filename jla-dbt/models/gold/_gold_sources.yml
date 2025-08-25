@@ -1,0 +1,11 @@
+version: 2  
+
+sources:  
+  - name: gold_layer
+    database: demo  
+    schema: gold
+    tables:
+      - name: jobs_description
+        description: "jobs description for both linkedin and indeed"
+      - name: jobs_enriched
+        description: "all enriched information except jobs description for both linkedin and indeed with availability check and ai summaries"

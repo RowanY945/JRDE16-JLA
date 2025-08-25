@@ -1,0 +1,25 @@
+version: 2  
+
+sources:  
+  - name: bronze_layer
+    description: "Bronze layer - lightly transformed data"
+    database: demo  
+    schema: bronze  # Separate schema for bronze
+    tables:
+      - name: indeed_jobs
+        description: "Bronze Layer for Indeed"
+      - name: linkedin_jobs
+        description: "Bronze Layer for Linkedin"
+
+  - name: silver_layer
+    database: demo  
+    schema: silver
+    tables:
+      - name: indeed_cleaned
+        description: "Cleaned Indeed jobs with standardized schema"
+      - name: linkedin_cleaned
+        description: "Cleaned LinkedIn jobs with standardized schema"
+      - name: jobs_description
+        description: "jobs description for both linkedin and indeed"
+      - name: jobs_unified
+        description: "all information except jobs description for both linkedin and indeed"
