@@ -1,49 +1,73 @@
+{{ 
+    config(
+        materialized='incremental',
+        file_format='delta',
+        location_root='s3://jla-data-gold/',
+        unique_key='job_posting_id',
+        incremental_strategy='merge'
+    ) 
+}}
+
 with source_data as (
-    select * from `demo`.`gold`.`stg_job_postings`
+    select * from {{ source('silver_layer', 'jobs_enriched') }}
 ),
 
-salary_data as (
+cleaned_data as (
     select
+        -- Primary identifiers
+        job_posting_id,
+        url as job_url,
+        
+        -- Job details
         job_title,
-        job_seniority_level,
-        job_function,
-        job_industries,
+        company_name,
         job_city,
         job_state,
-        min_salary,
-        max_salary,
-        (min_salary + max_salary) / 2.0 as mid_salary,
-        job_employment_type,
-        company_name
-    from source_data
-    where min_salary is not null and max_salary is not null
-),
-
-salary_benchmarks as (
-    select
-        job_title,
+        job_country,
         job_seniority_level,
         job_function,
-        job_state,
-        count(*) as sample_size,
-        round(avg(mid_salary), 0) as avg_salary,
-        round(percentile_approx(mid_salary, 0.25), 0) as p25_salary,
-        round(percentile_approx(mid_salary, 0.5), 0) as median_salary,  
-        round(percentile_approx(mid_salary, 0.75), 0) as p75_salary,
-        round(min(mid_salary), 0) as min_salary_observed,
-        round(max(mid_salary), 0) as max_salary_observed,
-        round(avg(max_salary - min_salary), 0) as avg_salary_range_width,
-        round(stddev(mid_salary), 0) as salary_std_dev,
-        case 
-            when avg(mid_salary) >= 150000 then 'PREMIUM'
-            when avg(mid_salary) >= 100000 then 'COMPETITIVE'
-            when avg(mid_salary) >= 70000 then 'STANDARD'
-            else 'ENTRY_LEVEL'
-        end as market_tier,
-        round((max(mid_salary) - min(mid_salary)) / nullif(min(mid_salary), 0) * 100, 1) as growth_potential_pct
-    from salary_data
-    group by 1,2,3,4
-    having count(*) >= 3
+        job_posted_date,
+        job_employment_type,
+        job_industries,
+        
+        -- Date transformations
+        
+        scraped_dts,
+        ingest_dts,
+        _rescued_data,
+
+
+        -- Salary parsing (basic extraction)
+        min_salary,
+        max_salary,
+        
+
+        -- Status flags
+        case when is_enriched = 1 then true else false end as is_enriched,
+        case when is_active = 1 then true else false end as is_active,
+        job_source,
+        enriched_dts,
+
+
+        
+        -- Audit fields
+        current_timestamp() as dbt_created_at,
+        current_timestamp() as dbt_updated_at
+        
+    from source_data
+    where is_active = 1  -- Only include active job postings
 )
 
-select * from salary_benchmarks
+select * from cleaned_data
+
+
+
+
+
+{% if is_incremental() %}
+    -- Only read files modified since last run
+    WHERE enriched_dts > (
+        SELECT COALESCE(MAX(enriched_dts), '1900-01-01'::timestamp) 
+        FROM {{ this }}
+    )
+{% endif %}
