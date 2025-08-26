@@ -13,7 +13,7 @@ with source_data as (
     select * from {{ source('gold_layer', 'stg_job_postings') }}
 ),
 
-with job_density as (
+job_density as (
     select
         job_city,
         job_state,
